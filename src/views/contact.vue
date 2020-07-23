@@ -361,6 +361,11 @@ export default {
     transition: opacity 0.95s cubic-bezier(0.55, 0, 0.1, 1);
     opacity: 0.95;
   }
+  @media (min-height: 900px){
+    #form {
+      margin-top: 20vh;
+    }
+  }
   #form:hover {
     opacity: 1;
   }

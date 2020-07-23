@@ -404,8 +404,13 @@ export default {
   .example-3d {
     width: 100%;
     height: 80vh;
-    padding-top: 25vh;
+    padding-top: 15vh;
     padding-bottom: 50px;
+  }
+  @media (min-height: 900px) {
+    .example-3d{
+      padding-top: 25vh;
+    }
   }
   .closeOverlay {
     position: fixed;

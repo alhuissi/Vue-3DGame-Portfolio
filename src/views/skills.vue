@@ -22,7 +22,7 @@
 
               <span style="padding-left: 1vw;">
                 {{ $t("skills3par") }}Java, C++, PHP, HTML5, CSS3, Javascript,
-                VueJS, Nuxt, NodeJS, Ionic, Angular, Python, ThreeJS, Wordpress,
+                VueJS, Nuxt, NodeJS, Docker, Ionic, Angular, Python, ThreeJS, Wordpress,
                 Shopify, Photoshop, Premiere Pro.</span
               >
             </p>
@@ -176,7 +176,7 @@ export default {
   font-size: 16px;
   color: white;
   font-family: coolvetica;
-  transition: 725ms ease;
+  transition: 325ms ease;
 }
 .seeSkills:hover {
   opacity: 0.5;
@@ -188,13 +188,14 @@ export default {
     background-color: black;
     margin-left: 18vw;
     margin-right: 18vw;
-    margin-top: 15vh;
+    margin-top: 10vh;
     padding-left: 5vh;
     padding-right: 5vh;
     text-justify: center !important;
     padding-bottom: 1vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    transition: 725ms ease;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius:15px;
+    transition: 325ms ease;
     opacity: 0.95;
     z-index: 99;
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -203,7 +204,8 @@ export default {
   }
   #containerSkills:hover {
     opacity: 1;
-    border-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(0, 0, 0, 0.95);
+    border-color: rgba(255, 255, 255, 0.95);
   }
   #fondoSkills {
     position: fixed;
@@ -212,7 +214,7 @@ export default {
     background-color: rgba(0, 0, 0, 0);
     width: 100%;
     height: 100%;
-    transition: 925ms;
+    transition: 325ms;
   }
   #e {
     position: absolute;
@@ -243,16 +245,28 @@ export default {
   .parrafoSkills {
     position: relative;
     font-family: coolvetica;
-    font-size: 20px;
+    font-size: 14px;
     text-justify: center !important;
     color: white;
     transition: 725ms ease;
+    letter-spacing: 0.5px;
   }
   .iconSwipeContainer {
     position: fixed;
     left:48vw;
-    bottom:25vh;
+    bottom:15vh;
     z-index:99;
+  }
+  @media (min-height: 900px){
+    .parrafoSkills{
+      font-size: 20px;
+    }
+    .iconSwipeContainer{
+      bottom:25vh;
+    }
+    .containerSkills{
+      margin-top: 15vh;
+    }
   }
   .iconSwipe{
     font-size:80px!important;
@@ -333,7 +347,7 @@ export default {
   .iconSwipeContainer {
     position: fixed;
     left:44vw;
-    bottom:8vh;
+    bottom:4vh;
     z-index:99;
   }
   .iconSwipe{

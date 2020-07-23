@@ -9,7 +9,7 @@
   "testimonio1": "Excellent experience in creating my website. We worked remotely without any problem. For his dedication, sensitivity and professionalism. I recommend it 100%, my website was better than I dreamed it, THANK YOU VERY MUCH.",
   "testimonio2": "An impeccable, professional and prompt work.",
   "testimonio3": "I am happy and calm because what I wanted was fully achieved. Thank you very much to all the team that has lived up to a great service.",
-  "home1par": "My name is Alfredo L'Huissier. I'm a software developer with more than 10 years of expierence working remotely. I specialize in applications and websites, with a particular focus on creating novel and memorable user experiences.",
+  "home1par": "My name is Alfredo L'Huissier. I am a software developer with more than 10 years of expierence working remotely. I specialize in applications and websites, with a particular focus on creating novel and memorable user experiences.",
   "home2par": "Key technologies: ",
   "home1text": "See skills",
   "home2text": "See projects",
@@ -55,6 +55,8 @@
   "resumen-idea":"Digital identity of the IDEa experimental dance company. Made with Wordpress, taking advantage of its content management features. Modern videos and galleries.",
   "categorias-balamboo":"Website, web design, SEO",
   "resumen-balamboo":"Company of design and development of website and web applications, search engine optimization (SEO) and digital marketing.",
+  "categorias-temac":"Website, services, catalog",
+  "resumen-temac":"Company dedicated to the import of machinery and products for hydraulic installations, sanitation and mining.",
   "categorias-rubik":"Web apps, games, 3D",
   "resumen-rubik":"3D implementation of a Rubik's cube, with full game logic and turn counting. Programmed with Javascript and ThreeJS library for handling 3D in the browser. Compatible with VR (virtual reality) and AR (augmented reality). Hosted in Firebase Hosting.",
   "resu": "Synthesis: "

@@ -232,30 +232,28 @@ export default {
     font-family: "quantum";
     text-transform: uppercase;
     font-size: 21px;
-    transition: 925ms;
+    transition: 125ms;
     opacity: 1;
   }
   .mui-appbarZ {
     position: fixed;
     width: 100%;
     -webkit-transition-duration: 925ms;
-    transition-duration: 925ms;
+    transition-duration: 125ms;
     z-index: 9;
   }
   .menuItem {
     text-align: center;
-    transition: 925ms;
+    transition: 125ms;
     color: white;
     padding-bottom: 0 !important;
   }
   .menuItem:hover {
     text-shadow: 1px 1px 1px white;
-    transition: 925ms;
   }
   .menuItem:active {
     text-shadow: 1px 1px 1px white;
     opacity: 0.1;
-    transition: 925ms;
   }
   .box {
     transition: 0.95s cubic-bezier(0.55, 0, 0.1, 1);

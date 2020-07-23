@@ -8,146 +8,104 @@
       <!--v-btn text id="esc" @click="onUnLock()"
         ><v-icon text large color="#ffffff">mdi-keyboard-esc</v-icon></v-btn
       -->
-      <v-carousel id="testimonios" hide-delimiters :show-arrows="false" cycle>
-        <v-carousel-item>
-          <v-sheet style="background-color:rgba(0,0,0,0);" height="100%">
-            <v-row class="fill-height" align="center" justify="center">
-              <div id="testimonioText">
-                "{{ $t("testimonio1") }}" <br />
-                <v-img
-                  :src="require('@/assets/logos/logo-makine.png')"
-                  height="150px"
-                  width="150px"
-                  style="margin-left:auto;margin-right:auto;"
-                ></v-img>
-              </div>
-            </v-row>
-          </v-sheet>
-        </v-carousel-item>
-        <v-carousel-item
-          ><v-sheet style="background-color:rgba(0,0,0,0);" height="100%">
-            <v-row class="fill-height" align="center" justify="center">
-              <div id="testimonioText">
-                "{{ $t("testimonio2") }}" <br />
-                <v-img
-                  :src="require('@/assets/logos/logo-casa.png')"
-                  height="150px"
-                  width="150px"
-                  style="margin-left:auto;margin-right:auto;"
-                ></v-img>
-              </div>
-            </v-row> </v-sheet
-        ></v-carousel-item>
-        <v-carousel-item
-          ><v-sheet style="background-color:rgba(0,0,0,0);" height="100%">
-            <v-row class="fill-height" align="center" justify="center">
-              <div id="testimonioText">
-                "{{ $t("testimonio3") }}" <br />
-                <v-img
-                  :src="require('@/assets/logos/logo-l-vk.png')"
-                  height="150px"
-                  width="150px"
-                  style="margin-left:auto;margin-right:auto;"
-                ></v-img>
-              </div>
-            </v-row> </v-sheet
-        ></v-carousel-item>
-      </v-carousel>
-      <div id="presentacion">
-        <v-btn text id="cruz" @click="close()"
-          ><v-icon text color="#ffffff">mdi-close</v-icon></v-btn
-        >
 
-        <v-container fluid>
-          <v-row>
-            <v-col cols="4">
+          <div id="presentacion">
+            <v-btn text id="cruz" @click="close()"
+              ><v-icon text color="#ffffff">mdi-close</v-icon></v-btn
+            >
+
+            <v-container fluid>
               <v-row>
-                <div class="container">
-                  <v-img
-                    :src="image_srcAL"
-                    class="img1"
-                    contain
-                    position="100% 0px"
-                    ><!--div class="middle">
+                <v-col cols="4">
+                  <v-row>
+                    <div class="container">
+                      <v-img
+                        :src="image_srcAL"
+                        class="img1"
+                        contain
+                        position="100% 0px"
+                        ><!--div class="middle">
                       <v-btn fab small router to="/skills" class="text"
                         ><v-icon
                           >mdi-account-search</v-icon
                         ></v-btn>
                     </div--></v-img
-                  >
-                </div>
-              </v-row>
-              <v-row class="iconos">
-                <a href="https://www.github.com/alhuissi" target="_blank">
-                  <v-icon
-                    color="#ffffff"
-                    class="iconContacto"
-                    target="_blank"
-                    href="https://www.github.com/alhuissi"
-                    >mdi-github</v-icon
-                  >
-                  <div id="gitHub">GitHub</div>
-                </a>
+                      >
+                    </div>
+                  </v-row>
+                  <v-row class="iconos">
+                    <a href="https://www.github.com/alhuissi" target="_blank">
+                      <v-icon
+                        color="#ffffff"
+                        class="iconContacto"
+                        target="_blank"
+                        href="https://www.github.com/alhuissi"
+                        >mdi-github</v-icon
+                      >
+                      <div id="gitHub">GitHub</div>
+                    </a>
 
-                <a href="mailto:alfredo@thedeval.com" target="_blank">
-                  <v-icon
-                    color="#ffffff"
-                    class="iconContacto"
-                    target="_blank"
-                    href="mailto:alfredo@thedeval.com"
-                    >mdi-email</v-icon
-                  >
-                  <div id="enviarMail">Email</div>
-                </a>
-              </v-row>
-            </v-col>
-            <v-col cols="8">
-              <div class="parrafo">
-                <v-card style="background-color: rgba(0,0,0,0); color: white;"
-                  ><v-card-title style="font-size: 28px;">{{
-                    $t("salutation")
-                  }}</v-card-title></v-card
-                >
-                <p>
-                  <span style="padding-left: 1vw;"> {{ $t("home1par") }}</span>
-                  <br />
-                  <span style="padding-left: 1vw;">
+                    <a href="mailto:alfredo@thedeval.com" target="_blank">
+                      <v-icon
+                        color="#ffffff"
+                        class="iconContacto"
+                        target="_blank"
+                        href="mailto:alfredo@thedeval.com"
+                        >mdi-email</v-icon
+                      >
+                      <div id="enviarMail">Email</div>
+                    </a>
+                  </v-row>
+                </v-col>
+                <v-col cols="8">
+                  <div class="parrafo">
+                    <v-card
+                      style="background-color: rgba(0,0,0,0); color: white;"
+                      ><v-card-title style="font-size: 3vh;">{{
+                        $t("salutation")
+                      }}</v-card-title></v-card
+                    >
+                    <p>
+                      <span style="padding-left: 1vw;">
+                        {{ $t("home1par") }}</span
+                      >
+                      <br />
+                      <!--span style="padding-left: 1vw;">
                     {{ $t("home2par") }}Javascript, VueJS, Angular, Java, PHP,
-                    Python.</span
-                  >
-                </p>
-                <v-card
-                  router
-                  to="/skills"
-                  style="background-color: rgba(0,0,0,0); color: white;"
-                  ><v-card-title class="verHabilidades"
-                    ><v-icon color="#0fffff">mdi-arrow-right</v-icon
-                    >{{ $t("home1text") }}</v-card-title
-                  ></v-card
-                >
-                <v-card
-                  router
-                  to="/portafolios"
-                  style="background-color: rgba(0,0,0,0); color: white;"
-                  ><v-card-title class="verHabilidades"
-                    ><v-icon color="#0fffff">mdi-arrow-right</v-icon
-                    >{{ $t("home2text") }}</v-card-title
-                  ></v-card
-                >
-                <v-card
-                  router
-                  to="/contact"
-                  style="background-color: rgba(0,0,0,0); color: white;margin-bottom:10px;"
-                  ><v-card-title class="verHabilidades"
-                    ><v-icon color="#0fffff">mdi-arrow-right</v-icon
-                    >{{ $t("home3text") }}</v-card-title
-                  ></v-card
-                >
-              </div>
-            </v-col>
-          </v-row>
-        </v-container>
-      </div>
+                    Python.</span-->
+                    </p>
+                    <v-card
+                      router
+                      to="/skills"
+                      style="background-color: rgba(0,0,0,0); color: white;"
+                      ><v-card-title class="verHabilidades"
+                        ><v-icon color="#0fffff">mdi-arrow-right</v-icon
+                        >{{ $t("home1text") }}</v-card-title
+                      ></v-card
+                    >
+                    <v-card
+                      router
+                      to="/portafolios"
+                      style="background-color: rgba(0,0,0,0); color: white;"
+                      ><v-card-title class="verHabilidades"
+                        ><v-icon color="#0fffff">mdi-arrow-right</v-icon
+                        >{{ $t("home2text") }}</v-card-title
+                      ></v-card
+                    >
+                    <v-card
+                      router
+                      to="/contact"
+                      style="background-color: rgba(0,0,0,0); color: white;margin-bottom:10px;"
+                      ><v-card-title class="verHabilidades"
+                        ><v-icon color="#0fffff">mdi-arrow-right</v-icon
+                        >{{ $t("home3text") }}</v-card-title
+                      ></v-card
+                    >
+                  </div>
+                </v-col>
+              </v-row>
+            </v-container>
+            </div>
       <v-card>
         <div id="flechaPlay1">
           <v-icon x-large color="#ffffff" class="neon">mdi-arrow-right</v-icon>
@@ -160,16 +118,89 @@
         </div -->
       </v-card>
     </div>
+
     <div id="instructions">
+      <span style="font-size:35px;text-transform:uppercase;text-shadow: 0px 0px 0px red;text-decoration:underline;"
+        >{{ $t("home3instrucciones") }}</span
+      >
       <br /><br />
-      <span style="font-size:36px">{{ $t("home3instrucciones") }}:</span>
-      <br /><br />
-      {{ $t("home3movimiento") }}: WASD<br />
-      {{ $t("home3correr") }}: SHIFT<br />
-      {{ $t("home3saltar") }}: ESPACIO<br />
-      {{ $t("home3volar") }} F <br />
-      {{ $t("home3camara") }}: MOUSE <br />
+      {{ $t("home3movimiento") }}:
+      <div
+        style='text-shadow: 0px 0px 0px red;font-family:"coolvetica";font-size:25px;margin-bottom:10px;margin-top:5px;'
+      >
+        WASD
+      </div>
+      {{ $t("home3correr") }}:
+      <div
+        style='text-shadow: 0px 0px 0px red;font-family:"coolvetica";font-size:25px;margin-bottom:10px;'
+      >
+        SHIFT
+      </div>
+      {{ $t("home3saltar") }}:
+      <div
+        style='text-shadow: 0px 0px 0px red;font-family:"coolvetica";font-size:25px;margin-bottom:10px;'
+      >
+        Espacio
+      </div>
+      {{ $t("home3volar") }}
+      <div
+        style='text-shadow: 0px 0px 0px red;font-family:"coolvetica";font-size:25px;margin-bottom:10px;'
+      >
+        F
+      </div>
+      {{ $t("home3camara") }}:
+      <div
+        style='text-shadow: 0px 0px 0px red;font-family:"coolvetica";font-size:25px;margin-bottom:10px;'
+      >
+        Mouse
+      </div>
     </div>
+
+    <v-carousel id="testimonios" hide-delimiters :show-arrows="false" cycle>
+      <v-carousel-item>
+        <v-sheet style="background-color:rgba(0,0,0,0);" height="100%">
+          <v-row align="center" justify="center">
+            <div id="testimonioText">
+              "{{ $t("testimonio1") }}" <br />
+              <v-img
+                :src="require('@/assets/logos/logo-makine.png')"
+                height="100px"
+                width="100px"
+                style="margin-left:auto;margin-right:auto;"
+              ></v-img>
+            </div>
+          </v-row>
+        </v-sheet>
+      </v-carousel-item>
+      <v-carousel-item
+        ><v-sheet style="background-color:rgba(0,0,0,0);" height="100%">
+          <v-row align="center" justify="center">
+            <div id="testimonioText">
+              "{{ $t("testimonio2") }}" <br />
+              <v-img
+                :src="require('@/assets/logos/logo-casa.png')"
+                height="100px"
+                width="100px"
+                style="margin-left:auto;margin-right:auto;"
+              ></v-img>
+            </div>
+          </v-row> </v-sheet
+      ></v-carousel-item>
+      <v-carousel-item
+        ><v-sheet style="background-color:rgba(0,0,0,0);" height="100%">
+          <v-row align="center" justify="center">
+            <div id="testimonioText">
+              "{{ $t("testimonio3") }}" <br />
+              <v-img
+                :src="require('@/assets/logos/logo-l-vk.png')"
+                height="100px"
+                width="100px"
+                style="margin-left:auto;margin-right:auto;"
+              ></v-img>
+            </div>
+          </v-row> </v-sheet
+      ></v-carousel-item>
+    </v-carousel>
     <div id="controlesMobile">
       <v-btn
         x-large
@@ -239,6 +270,18 @@ export default {
       blocker: null,
       image_src: require("../assets/logo.png"),
       image_srcAL: require("../assets/AL.jpg"),
+      ops: {
+        vuescroll: {
+          mode: "native",
+          sizeStrategy: "percent",
+          detectResize: true,
+        },
+        scrollPanel: {
+          scrollingX: false,
+        },
+        rail: {},
+        bar: { background: "rgba(0,178,255,0.7)" },
+      },
     };
   },
   metaInfo: {
@@ -260,8 +303,8 @@ export default {
       this.scene = new Three.Scene();
 
       if (window.innerWidth > 960) {
-        this.camera.position.y = 10;
-        this.camera.position.z = 1250;
+        this.camera.position.y = 14;
+        this.camera.position.z = 1240;
         this.controls = new PointerLockControls(this.camera, document.body);
         this.scene.add(this.controls.getObject());
       } else {
@@ -412,6 +455,18 @@ export default {
         undefined,
         undefined
       );
+      loader.load(
+        "/need_some_space/scene.gltf",
+        (gltf3) => {
+          this.scene.add(gltf3.scene);
+          gltf3.scene.scale.set(0.05, 0.05, 0.05); //scale here!
+          gltf3.scene.position.set(-6, 8, 1240); //position here!
+          this.objects.push(gltf3.scene);
+          this.model2 = gltf3.scene.children[0];
+        },
+        undefined,
+        undefined
+      );
       //Pieza
       loader.load(
         "/my_workspace/scene.gltf",
@@ -435,7 +490,7 @@ export default {
       }
       if (this.controls.isLocked === true) {
         this.raycaster.ray.origin.copy(this.controls.getObject().position);
-        this.raycaster.ray.origin.y -= 10;
+        this.raycaster.ray.origin.y -= 14;
 
         let intersections = this.raycaster.intersectObjects(this.objects);
 
@@ -478,9 +533,9 @@ export default {
 
         this.controls.getObject().position.y += this.velocity.y * delta; // new behavior
 
-        if (this.controls.getObject().position.y < 10) {
-          this.velocity.y = 0;
-          this.controls.getObject().position.y = 10;
+        if (this.controls.getObject().position.y < 14) {
+          this.velocity.y = 14;
+          this.controls.getObject().position.y = 14;
           this.canJump = true;
         }
 
@@ -500,13 +555,17 @@ export default {
       this.controls.lock();
     },
     onLock: function() {
-      this.instructions.style.display = "";
-      this.instructions.style.opacity = 1;
+      this.instructions.style.display = "block";
+      setTimeout(() => {
+        this.instructions.style.opacity = 1;
+      }, 500);
+
       this.blocker.style.display = "";
       document.getElementById("presentacion").style.display = "block";
       document.getElementById("presentacion").style.opacity = "0";
       document.getElementById("botonPlay").style.opacity = "0";
       document.getElementById("flechaPlay1").style.opacity = "0";
+      document.getElementById("testimonios").style.display = "none";
       document.getElementById("controlesMobile").style.opacity = "1";
       document.getElementById("controlesMobile").style.display = "block";
       //document.getElementById("esc").style.opacity = "1";
@@ -514,7 +573,11 @@ export default {
       //document.getElementById("flechaPlay2").style.opacity = "0";
       setTimeout(() => {
         this.instructions.style.opacity = 0;
-      }, 4000);
+      }, 7000);
+      setTimeout(() => {
+        document.getElementById("testimonios").style.opacity = "0";
+      }, 500);
+      
     },
     onUnlock: function() {
       this.blocker.style.display = "block";
@@ -523,11 +586,15 @@ export default {
       document.getElementById("flechaPlay1").style.opacity = "1";
       document.getElementById("controlesMobile").style.opacity = "0";
       document.getElementById("controlesMobile").style.display = "none";
+      document.getElementById("testimonios").style.display = "block";
       //document.getElementById("esc").style.opacity = "0";
       //document.getElementById("esc").style.display = "none";
       //document.getElementById("flechaPlay2").style.opacity = "1";
       this.instructions.style.display = "none";
       this.instructions.style.opacity = 0;
+      setTimeout(() => {
+        document.getElementById("testimonios").style.opacity = "1";
+      }, 500);
     },
     mobileControlUp() {
       this.moveForward = true;
@@ -610,7 +677,7 @@ export default {
     close() {
       document.getElementById("presentacion").style.opacity = "0";
       document.getElementById("pregunta").style.opacity = "1";
-      document.getElementById("pregunta").style.display = "";
+      document.getElementById("pregunta").style.display = "block";
       document.getElementById("testimonios").style.display = "";
       document.getElementById("testimonios").style.opacity = "1";
       document.getElementById("presentacion").style.zIndex = "-1";
@@ -674,39 +741,34 @@ export default {
   transition: 925ms;
 }
 #testimonios {
-  position: absolute;
-  z-index: 9;
-  opacity: 0;
-  top: 10vh;
+  position: fixed;
+  z-index: 2;
+  top: 3vh!important;
+  margin-top: 0vh;
+  padding-top: 0vh;
   width: 100%;
+  height:20vh!important;
 }
 #testimonioText {
-  color: white;
-  z-index: 9;
+  color: rgb(218, 231, 238);
+  z-index: 2;
   text-align: center;
 }
 @media (min-width: 960px) {
   #instructions {
     position: fixed;
-    left: 7vw;
-    bottom: 8vh;
-
-    -webkit-box-orient: horizontal;
-    -moz-box-orient: horizontal;
-    box-orient: horizontal;
-
-    -webkit-box-pack: center;
-    -moz-box-pack: center;
-    box-pack: center;
-
-    -webkit-box-align: center;
-    -moz-box-align: center;
-    box-align: center;
+    display: none;
+    top: 23vh;
+    justify-content: center;
+    text-align: center;
+    text-justify:center;
+    width:100vw;
 
     color: #ffffff;
+    text-shadow: 2px 2px 4px blue;
     text-align: center;
-    font-family: brokenz;
-    font-size: 30px;
+    font-family: ethnocentric;
+    font-size: 20px;
     line-height: 34px;
     opacity: 0;
     transition: 925ms;
@@ -721,10 +783,10 @@ export default {
   #botonPlay {
     position: fixed;
     padding: 15px;
-    padding-top: 10px;
-    padding-bottom: 20px;
+    padding-top: 3px;
+    padding-bottom: 7px;
     left: 44.3vw;
-    bottom: 20vh;
+    bottom: 16vh;
     font-family: "quantum";
 
     line-height: 34px;
@@ -733,8 +795,8 @@ export default {
     background-color: rgba(255, 255, 255, 1);
     cursor: pointer;
 
-    font-size: 40px;
-    z-index: 8;
+    font-size: 20px;
+    z-index: 99;
     box-shadow: 
       /*3d layers*/ 0px 0px 1px rgb(167, 167, 167),
       0px 1px 1px rgb(167, 167, 167), 0px 2px 1px rgb(167, 167, 167),
@@ -750,13 +812,12 @@ export default {
   }
   #botonPlay:hover {
     background-color: rgba(255, 255, 255, 0.9);
-    font-size: 39px;
     transform: translateY(7px);
   }
   #flechaPlay1 {
     position: fixed;
     z-index: 9;
-    bottom: 21.5vh;
+    bottom: 16.5vh;
     left: 41.2vw;
     animation: play1 500ms linear infinite;
     animation-direction: alternate-reverse;
@@ -771,6 +832,8 @@ export default {
   }
   #cruz {
     position: absolute;
+    display:none;
+    opacity:0;
     color: black;
     top: 10px;
     left: 92%;
@@ -794,34 +857,31 @@ export default {
     position: relative;
     margin-left: 22vw;
     margin-right: 22vw;
-    margin-top: 11vh;
+    margin-top: 23vh;
     padding-top: 0vh;
     text-justify: center !important;
     padding-bottom: 0vh;
-    background-color: rgba(9, 9, 9, 0.9);
+    background-color: rgba(0, 0, 0, 0.95);
+    max-height:50vh;
     transition: 725ms ease;
-    opacity: 0.95;
+    opacity: 1;
     z-index: 9;
-    box-shadow: 10px 10px 100px rgba(11, 124, 199, 0.7);
+    border-radius:55px;
+    border: 1px solid rgba(255,255,255,0.5);
+    animation: cycle 10s infinite alternate-reverse;
+    /*box-shadow: 10px 10px 100px rgba(11, 124, 199, 0.5);*/
   }
   #presentacion:hover {
     transition: 725ms ease;
     opacity: 1;
-    background-color: rgba(9, 9, 9, 1);
-  }
-  @media (min-height: 900px) {
-    #presentacion {
-      margin-top: 12vh;
-      padding-left: 20px;
-      padding-right: 20px;
-      padding-bottom: 5vh;
-    }
+    background-color: rgba(0, 0, 0, 1);
   }
   .parrafo {
     position: relative;
     font-family: coolvetica;
-    font-size: calc(10px + 0.5vw);
+    font-size: 14px;
     text-justify: center !important;
+    letter-spacing: 0.8px;
     color: white;
     width: 35vw;
     transition: 725ms ease;
@@ -829,8 +889,8 @@ export default {
   .img1 {
     position: relative;
     border-radius: 75px;
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     left: 4vw;
     top: 5vh;
     filter: saturate(0%);
@@ -839,7 +899,6 @@ export default {
     animation-direction: alternate-reverse;
     backface-visibility: hidden;
   }
-
   .middle {
     transition: 0.5s ease;
     opacity: 0;
@@ -874,19 +933,19 @@ export default {
   }
   .verHabilidades {
     color: white;
-    font-size: calc(10px + 0.5vw);
+    font-size: 14px;
+    letter-spacing: 0.8px;
     transition: 725ms;
     padding: 0;
   }
   .verHabilidades:hover {
     opacity: 0.7;
     transform: translateX(7px);
-    font-size: 19px;
   }
   .iconos {
     position: relative;
     top: 15%;
-    left: 42%;
+    left: 39%;
   }
   .iconContacto {
     padding: 5px;
@@ -895,7 +954,7 @@ export default {
   .iconContacto:hover {
     cursor: pointer;
     transition-duration: 3s ease;
-    transform: translateY(-7px);
+    transform: translateY(-18px);
     opacity: 0.7;
   }
   #gitHub {
@@ -955,19 +1014,56 @@ export default {
     top: 10vh;
   }
   #testimonioText {
-    width: 50vw;
-    font-size: 24px;
+    width: 80vw;
+    font-size: 12px;
     font-weight: 600;
+    letter-spacing:0.3px;
     text-shadow: 1px 1px 10px rgba(0, 0, 0, 1);
+  }
+  @media (min-height: 900px) {
+    #presentacion {
+      margin-top: 25vh;
+    }
+    .parrafo{
+      font-size: calc(10px + 0.5vw);
+    }
+    #flechaPlay1{
+      bottom: 21.5vh;
+    }
+    #botonPlay{
+      font-size: 40px;
+      padding: 15px;
+      padding-top: 10px;
+      padding-bottom: 20px;
+      bottom:20vh;
+    }
+    .img1{
+      width: 150px;
+      height: 150px;
+    }
+    .iconContacto:hover {
+      transform: translateY(-7px);
+    }
+    #testimonioText {
+      width: 80vw;
+      font-size: 20px;
+      font-weight: 600;
+      text-shadow: 1px 1px 10px rgba(0, 0, 0, 1);
+    }
+    .verHabilidades{
+      font-size: calc(10px + 0.5vw);
+    }
   }
 }
 @media (max-width: 960px) {
   #testimonios {
-    top:15vh;
+    top: 8vh;
+    opacity:0;
+    display:none;
   }
   #testimonioText {
     width: 90vw;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 600;
     text-shadow: 1px 1px 10px rgba(0, 0, 0, 1);
   }
@@ -1080,14 +1176,16 @@ export default {
   }
   #presentacion {
     position: relative;
-    margin-left: 7vw;
-    margin-right: 7vw;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    width:96vw;
     margin-top: 14vh;
     border: 1px;
     border-radius: 5px;
     border-style: solid;
     border-color: white;
     text-justify: center !important;
+    display:block;
     padding-bottom: 3vh;
     background-color: rgba(0, 0, 0, 1);
     transition: 725ms ease;

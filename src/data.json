@@ -158,6 +158,20 @@
       "categories": "Website, catalog, food",
       "techUsed": "Wordpress, CSS",
       "resumen": ""
+    },
+    "Temac": {
+      "title": "Temac",
+      "id": "temac",
+      "ano": "2018",
+      "tipo": "Website",
+      "description": "Ingeniería Hidráulica",
+      "path": "https://temac.cl",
+      "posted": "2018.11.18",
+      "update": "",
+      "color": "white",
+      "categories": "Website, maquinaria, servicios",
+      "techUsed": "Wordpress, CSS",
+      "resumen": ""
     }
   },
   "apps": {
