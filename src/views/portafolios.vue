@@ -241,17 +241,7 @@ export default {
         pagination: {
           el: ".swiper-pagination",
         },
-      },
-      ops: {
-        vuescroll: {
-          mode: "native",
-          sizeStrategy: "percent",
-          detectResize: true,
-        },
-        scrollPanel: {},
-        rail: {},
-        bar: { background: "#0f0fa7" },
-      },
+      }
     };
   },
   components: {

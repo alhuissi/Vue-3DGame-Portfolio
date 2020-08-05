@@ -175,19 +175,19 @@ a:focus{
 }
 @keyframes play1 {
   0% {
-    left: 42vw;
+    margin-left: 1vw;
   }
   20% {
-    left: 41.8vw;
+    margin-left: 0.8vw;
   }
   40% {
-    left: 41.6vw;
+    margin-left: 0.6vw;
   }
   60% {
-    left: 41.4vw;
+    margin-left: 0.4vw;
   }
   80% {
-    left: 41.2vw;
+    margin-left: 0.2vw;
   }
 }
 @keyframes play2 {

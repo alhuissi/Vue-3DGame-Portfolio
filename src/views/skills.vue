@@ -10,17 +10,18 @@
         <v-btn text id="cruzSkills" @click="closeSkills()"
           ><v-icon text color="#ffffff">mdi-close</v-icon></v-btn
         >
-        <v-container fluid>
+        <vue-scroll :ops="ops">
+        <v-container fluid style="max-height:60vh;">
           <div class="parrafoSkills">
             <p style="text-shadow: 2px 2px 10px #000000;">
-              <span style="padding-left: 1vw;">
+              <span style="padding-left:5vh;">
                 {{ $t("skills1par") }}
               </span>
               <br /><br />
-              <span style="padding-left: 1vw;"> {{ $t("skills2par") }}</span>
+              <span style="padding-left:5vh;"> {{ $t("skills2par") }}</span>
               <br /><br />
 
-              <span style="padding-left: 1vw;">
+              <span style="padding-left:5vh;">
                 {{ $t("skills3par") }}Java, C++, PHP, HTML5, CSS3, Javascript,
                 VueJS, Nuxt, NodeJS, Docker, Ionic, Angular, Python, ThreeJS, Wordpress,
                 Shopify, Photoshop, Premiere Pro.</span
@@ -34,6 +35,7 @@
             </v-card>
           </div>
         </v-container>
+        </vue-scroll>
       </div>
       <div class="iconSwipeContainer">
         <v-icon color="white" class="iconSwipe">mdi-gesture-swipe </v-icon>
@@ -60,6 +62,16 @@ export default {
       controls: null,
       sky: null,
       blocker: null,
+      ops: {
+        vuescroll: {
+          mode: "native",
+          sizeStrategy: "percent",
+          detectResize: true,
+        },
+        scrollPanel: {},
+        rail: {},
+        bar: { background: "#4AD1B6" },
+      },
     };
   },
   metaInfo: {
@@ -177,6 +189,8 @@ export default {
   color: white;
   font-family: coolvetica;
   transition: 325ms ease;
+  margin-bottom:5vh;
+  margin-top:2vh;
 }
 .seeSkills:hover {
   opacity: 0.5;
@@ -236,7 +250,7 @@ export default {
   #cruzSkills {
     position: relative;
     color: black;
-    top: 0px;
+    top: 1vh;
     left: 98%;
   }
   #cruzSkills:hover {
@@ -285,8 +299,8 @@ export default {
     background-color: black;
     margin-left: 0vw;
     margin-right: 0vw;
-    margin-top: 10vh;
-    padding-top: 5vh;
+    margin-top: 15vh;
+    padding-top: 7vh;
     padding-left: 2vh;
     padding-right: 2vh;
     text-justify: center !important;
@@ -332,22 +346,26 @@ export default {
   #cruzSkills {
     position: absolute;
     color: black;
-    top: 0vh;
+    top: 1vh;
     z-index: 9;
     left: 0%;
   }
   .parrafoSkills {
     position: relative;
     font-family: coolvetica;
-    font-size: 13px;
+    padding-right:2vw;
+    font-size: 16px;
     text-justify: center !important;
     color: white;
     transition: 725ms ease;
+    text-align: justify;
+    text-justify: inter-word;
+
   }
   .iconSwipeContainer {
     position: fixed;
     left:44vw;
-    bottom:4vh;
+    bottom:7vh;
     z-index:99;
   }
   .iconSwipe{

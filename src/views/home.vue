@@ -10,9 +10,9 @@
       -->
 
           <div id="presentacion">
-            <v-btn text id="cruz" @click="close()"
+            <!--v-btn text id="cruz" @click="close()"
               ><v-icon text color="#ffffff">mdi-close</v-icon></v-btn
-            >
+            -->
 
             <v-container fluid>
               <v-row>
@@ -24,12 +24,7 @@
                         class="img1"
                         contain
                         position="100% 0px"
-                        ><!--div class="middle">
-                      <v-btn fab small router to="/skills" class="text"
-                        ><v-icon
-                          >mdi-account-search</v-icon
-                        ></v-btn>
-                    </div--></v-img
+                        ></v-img
                       >
                     </div>
                   </v-row>
@@ -60,13 +55,13 @@
                 <v-col cols="8">
                   <div class="parrafo">
                     <v-card
-                      style="background-color: rgba(0,0,0,0); color: white;"
-                      ><v-card-title style="font-size: 3vh;">{{
+                      style="background-color:rgba(0,0,0,0);color:white;"
+                      ><v-card-title style="font-size:4vh;margin-left:-2vh;">{{
                         $t("salutation")
                       }}</v-card-title></v-card
                     >
                     <p>
-                      <span style="padding-left: 1vw;">
+                      <span style="padding-left:5vh;">
                         {{ $t("home1par") }}</span
                       >
                       <br />
@@ -110,9 +105,10 @@
         <div id="flechaPlay1">
           <v-icon x-large color="#ffffff" class="neon">mdi-arrow-right</v-icon>
         </div>
+        <v-row justify="center">
         <v-card-title id="botonPlay" @click="onClickInstructions()">{{
           $t("playButton")
-        }}</v-card-title>
+        }}</v-card-title></v-row>
         <!-- div id="flechaPlay2">
           <v-icon large color="#ffffff">mdi-arrow-left</v-icon>
         </div -->
@@ -254,6 +250,8 @@ export default {
       controls: null,
       model: null,
       model2: null,
+      model3: null,
+      model4: null,
       raycaster: null,
       instructions: null,
       objects: [],
@@ -266,7 +264,6 @@ export default {
       prevTime: performance.now(),
       velocity: null,
       direction: null,
-      //color: null,
       blocker: null,
       image_src: require("../assets/logo.png"),
       image_srcAL: require("../assets/AL.jpg"),
@@ -433,7 +430,7 @@ export default {
         "/goku/scene.gltf",
         (gltf) => {
           this.scene.add(gltf.scene);
-          gltf.scene.scale.set(20, 20, 20); //scale here!
+          gltf.scene.scale.set(25, 25, 25); //scale here!
           gltf.scene.position.set(0, 2, 0); //position here!
           this.objects.push(gltf.scene);
           this.model = gltf.scene.children[0];
@@ -467,6 +464,18 @@ export default {
         undefined,
         undefined
       );
+      loader.load(
+        "/need_some_space/scene.gltf",
+        (gltf4) => {
+          this.scene.add(gltf4.scene);
+          gltf4.scene.scale.set(1, 1, 1); //scale here!
+          gltf4.scene.position.set(500, 500, 1000); //position here!
+          this.objects.push(gltf4.scene);
+          this.model4 = gltf4.scene.children[0];
+        },
+        undefined,
+        undefined
+      );
       //Pieza
       loader.load(
         "/my_workspace/scene.gltf",
@@ -487,6 +496,9 @@ export default {
       requestAnimationFrame(this.animate);
       if (this.model2) {
         this.model2.rotation.z += 0.00002;
+      }
+      if (this.model4) {
+        this.model4.rotation.z += 0.0002;
       }
       if (this.controls.isLocked === true) {
         this.raycaster.ray.origin.copy(this.controls.getObject().position);
@@ -534,7 +546,7 @@ export default {
         this.controls.getObject().position.y += this.velocity.y * delta; // new behavior
 
         if (this.controls.getObject().position.y < 14) {
-          this.velocity.y = 14;
+          this.velocity.y = 0;
           this.controls.getObject().position.y = 14;
           this.canJump = true;
         }
@@ -785,7 +797,6 @@ export default {
     padding: 15px;
     padding-top: 3px;
     padding-bottom: 7px;
-    left: 44.3vw;
     bottom: 16vh;
     font-family: "quantum";
 
@@ -818,7 +829,7 @@ export default {
     position: fixed;
     z-index: 9;
     bottom: 16.5vh;
-    left: 41.2vw;
+    left: 38vw;
     animation: play1 500ms linear infinite;
     animation-direction: alternate-reverse;
   }
@@ -1176,10 +1187,9 @@ export default {
   }
   #presentacion {
     position: relative;
-    margin-left: 2vw;
-    margin-right: 2vw;
-    width:96vw;
-    margin-top: 14vh;
+    width:100vw;
+    height:100vh;
+    padding-top:15vh;
     border: 1px;
     border-radius: 5px;
     border-style: solid;
@@ -1201,20 +1211,21 @@ export default {
     position: relative;
     font-family: coolvetica;
     font-size: 16px;
-    text-justify: center !important;
+    text-align: justify;
+    text-justify: inter-word;
     color: white;
-    width: 77vw;
+    width: 80vw;
     top: 7vh;
     left: -27vw;
     transition: 725ms ease;
   }
   .img1 {
     position: absolute;
-    top: -10px;
+    top: -20px;
     border-radius: 50px;
     width: 100px;
     height: 100px;
-    left: 30vw;
+    left: 34vw;
     box-shadow: 
       /*3d layers*/ 0px 0px 1px rgb(167, 167, 167),
       0px 1px 1px rgb(167, 167, 167), 0px 2px 1px rgb(167, 167, 167),
@@ -1226,7 +1237,7 @@ export default {
       /*left shadow*/ -2px 2px 10px rgba(0, 0, 0, 0.2),
       /*right shadow*/ 2px 2px 10px rgba(0, 0, 0, 0.2),
       /*white light*/ 1px 1px 120px rgba(255, 255, 255, 0.5);
-    filter: contrast(90%) saturate(140%);
+    filter: saturate(0%);
     transition: 725ms ease;
     animation: cycle 10s linear infinite;
     animation-direction: alternate-reverse;
@@ -1265,7 +1276,7 @@ export default {
   }
   .verHabilidades {
     color: white;
-    font-size: 13px;
+    font-size: 16px;
     transition: 725ms;
     padding: 0;
   }
@@ -1276,8 +1287,8 @@ export default {
   }
   .iconos {
     position: relative;
-    top: 7vh;
-    left: 62vw;
+    top: 5vh;
+    left: 70vw;
   }
   .iconContacto {
     padding: 5px;
