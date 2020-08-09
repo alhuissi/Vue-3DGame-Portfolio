@@ -78,7 +78,6 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { GlitchPass } from "three/examples/jsm/postprocessing/GlitchPass.js";
 import { HalftonePass } from "three/examples/jsm/postprocessing/HalftonePass.js";
-import { TWEEN } from "@tweenjs/tween.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 //const TWEEN = require('@tweenjs/tween.js');
 

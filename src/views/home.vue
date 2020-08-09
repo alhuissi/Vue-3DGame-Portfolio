@@ -1192,7 +1192,7 @@ export default {
     padding-top:15vh;
     border: 1px;
     border-radius: 5px;
-    border-style: solid;
+    border-style: none;
     border-color: white;
     text-justify: center !important;
     display:block;

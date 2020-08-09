@@ -9,7 +9,6 @@
     "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'"
   },
   "dependencies": {
-    "@tweenjs/tween.js": "^18.5.0",
     "core-js": "^3.6.4",
     "emailjs-com": "^2.4.1",
     "swiper": "^5.4.2",

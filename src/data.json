@@ -47,20 +47,6 @@
       "techUsed": "Wordpress, Javascript, CSS",
       "resumen": ""
     },
-    "mrclick": {
-      "title": "Mr Click",
-      "id": "mrclick",
-      "ano": "2020",
-      "tipo": "Ecommerce",
-      "description": "Ecommerce de tecnología",
-      "path": "https://mrclick.cl",
-      "posted": "2019.11.18",
-      "update": "",
-      "color": "white",
-      "categories": "E-commerce, technology",
-      "techUsed": "Shopify, PHP",
-      "resumen": ""
-    },
     "alquimia": {
       "title": "Colectivo Alquimia",
       "id": "alquimia",
@@ -89,18 +75,18 @@
       "techUsed": "Javascript, Firebase, ThreeJS",
       "resumen": ""
     },
-    "casa": {
-      "title": "CASA",
-      "id": "casa",
-      "ano": "2019",
-      "tipo": "Website",
-      "description": "Centro de Análisis Socioambiental",
-      "path": "https://centrosocioambiental.cl",
+    "mrclick": {
+      "title": "Mr Click",
+      "id": "mrclick",
+      "ano": "2020",
+      "tipo": "Ecommerce",
+      "description": "Ecommerce de tecnología",
+      "path": "https://mrclick.cl",
       "posted": "2019.11.18",
       "update": "",
-      "color": "black",
-      "categories": "Website, podcast, blog",
-      "techUsed": "Wordpress, CSS",
+      "color": "white",
+      "categories": "E-commerce, technology",
+      "techUsed": "Shopify, PHP",
       "resumen": ""
     },
     "Oficina Global": {
@@ -117,18 +103,18 @@
       "techUsed": "Wordpress, Javascript, CSS",
       "resumen": ""
     },
-    "kiwen": {
-      "title": "Kiwen",
-      "id": "kiwen",
+    "casa": {
+      "title": "CASA",
+      "id": "casa",
       "ano": "2019",
-      "tipo": "Ecommerce",
-      "description": "Ecommerce de productos naturales",
-      "path": "https://kiwen.cl",
+      "tipo": "Website",
+      "description": "Centro de Análisis Socioambiental",
+      "path": "https://centrosocioambiental.cl",
       "posted": "2019.11.18",
       "update": "",
-      "color": "white",
-      "categories": "E-commerce, organic",
-      "techUsed": "Wordpress, WooCommerce, Javascript, PHP",
+      "color": "black",
+      "categories": "Website, podcast, blog",
+      "techUsed": "Wordpress, CSS",
       "resumen": ""
     },
     "IDEa": {
@@ -171,6 +157,20 @@
       "color": "white",
       "categories": "Website, maquinaria, servicios",
       "techUsed": "Wordpress, CSS",
+      "resumen": ""
+    },
+    "kiwen": {
+      "title": "Kiwen",
+      "id": "kiwen",
+      "ano": "2019",
+      "tipo": "Ecommerce",
+      "description": "Ecommerce de productos naturales",
+      "path": "https://kiwen.cl",
+      "posted": "2019.11.18",
+      "update": "",
+      "color": "white",
+      "categories": "E-commerce, organic",
+      "techUsed": "Wordpress, WooCommerce, Javascript, PHP",
       "resumen": ""
     }
   },
