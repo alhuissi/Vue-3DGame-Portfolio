@@ -200,7 +200,37 @@
             </div>
           </div>
         </vue-scroll>
-      </div-->
+      </div
+      JSons:
+        "casa": {
+        "title": "CASA",
+        "id": "casa",
+        "ano": "2019",
+        "tipo": "Website",
+        "description": "Centro de Análisis Socioambiental",
+        "path": "https://centrosocioambiental.cl",
+        "posted": "2019.11.18",
+        "update": "",
+        "color": "black",
+        "categories": "Website, podcast, blog",
+        "techUsed": "Wordpress, CSS",
+        "resumen": ""
+        },
+        "Balamboo": {
+          "title": "Balamboo",
+          "id": "balamboo",
+          "ano": "2018",
+          "tipo": "Website",
+          "description": "Web design & development",
+          "path": "https://balamboo.cl",
+          "posted": "2018.11.18",
+          "update": "",
+          "color": "white",
+          "categories": "Website, web design, SEO",
+          "techUsed": "Wordpress, CSS, Angular",
+          "resumen": ""
+        },
+      -->
     </div>
   </section>
 </template>

@@ -13,7 +13,6 @@
             <!--v-btn text id="cruz" @click="close()"
               ><v-icon text color="#ffffff">mdi-close</v-icon></v-btn
             -->
-
             <v-container fluid>
               <v-row>
                 <v-col cols="4">
@@ -100,15 +99,14 @@
                 </v-col>
               </v-row>
             </v-container>
-            </div>
+          </div>
       <v-card>
         <div id="flechaPlay1">
           <v-icon x-large color="#ffffff" class="neon">mdi-arrow-right</v-icon>
         </div>
         <v-row justify="center">
-        <v-card-title id="botonPlay" @click="onClickInstructions()">{{
-          $t("playButton")
-        }}</v-card-title></v-row>
+          <v-card-title id="botonPlay" @click="onClickInstructions()">{{$t("playButton")}}</v-card-title>
+        </v-row>
         <!-- div id="flechaPlay2">
           <v-icon large color="#ffffff">mdi-arrow-left</v-icon>
         </div -->
@@ -153,7 +151,7 @@
     </div>
 
     <v-carousel id="testimonios" hide-delimiters :show-arrows="false" cycle>
-      <v-carousel-item>
+      <v-carousel-item reverse-transition="fade-transition" transition="fade-transition">
         <v-sheet style="background-color:rgba(0,0,0,0);" height="100%">
           <v-row align="center" justify="center">
             <div id="testimonioText">
@@ -168,8 +166,8 @@
           </v-row>
         </v-sheet>
       </v-carousel-item>
-      <v-carousel-item
-        ><v-sheet style="background-color:rgba(0,0,0,0);" height="100%">
+      <v-carousel-item reverse-transition="fade-transition" transition="fade-transition">
+        <v-sheet style="background-color:rgba(0,0,0,0);" height="100%">
           <v-row align="center" justify="center">
             <div id="testimonioText">
               "{{ $t("testimonio2") }}" <br />
@@ -182,8 +180,8 @@
             </div>
           </v-row> </v-sheet
       ></v-carousel-item>
-      <v-carousel-item
-        ><v-sheet style="background-color:rgba(0,0,0,0);" height="100%">
+      <v-carousel-item reverse-transition="fade-transition" transition="fade-transition">
+        <v-sheet style="background-color:rgba(0,0,0,0);" height="100%">
           <v-row align="center" justify="center">
             <div id="testimonioText">
               "{{ $t("testimonio3") }}" <br />
@@ -775,7 +773,6 @@ export default {
     text-align: center;
     text-justify:center;
     width:100vw;
-
     color: #ffffff;
     text-shadow: 2px 2px 4px blue;
     text-align: center;
@@ -799,13 +796,11 @@ export default {
     padding-bottom: 7px;
     bottom: 16vh;
     font-family: "quantum";
-
     line-height: 34px;
     text-align: center;
     letter-spacing: 1.2px;
     background-color: rgba(255, 255, 255, 1);
     cursor: pointer;
-
     font-size: 20px;
     z-index: 99;
     box-shadow: 
@@ -904,7 +899,6 @@ export default {
     height: 100px;
     left: 4vw;
     top: 5vh;
-    filter: saturate(0%);
     transition: all 325ms ease;
     animation: cycle 10s linear infinite;
     animation-direction: alternate-reverse;
@@ -1237,7 +1231,6 @@ export default {
       /*left shadow*/ -2px 2px 10px rgba(0, 0, 0, 0.2),
       /*right shadow*/ 2px 2px 10px rgba(0, 0, 0, 0.2),
       /*white light*/ 1px 1px 120px rgba(255, 255, 255, 0.5);
-    filter: saturate(0%);
     transition: 725ms ease;
     animation: cycle 10s linear infinite;
     animation-direction: alternate-reverse;

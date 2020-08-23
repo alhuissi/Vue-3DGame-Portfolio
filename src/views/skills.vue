@@ -11,7 +11,7 @@
           ><v-icon text color="#ffffff">mdi-close</v-icon></v-btn
         >
         <vue-scroll :ops="ops">
-        <v-container fluid style="max-height:60vh;">
+        <v-container fluid style="max-height:50vh;">
           <div class="parrafoSkills">
             <p style="text-shadow: 2px 2px 10px #000000;">
               <span style="padding-left:5vh;">
@@ -299,7 +299,7 @@ export default {
     background-color: black;
     margin-left: 0vw;
     margin-right: 0vw;
-    margin-top: 15vh;
+    margin-top: 13vh;
     padding-top: 7vh;
     padding-left: 2vh;
     padding-right: 2vh;
@@ -365,7 +365,7 @@ export default {
   .iconSwipeContainer {
     position: fixed;
     left:44vw;
-    bottom:7vh;
+    bottom:5vh;
     z-index:99;
   }
   .iconSwipe{
