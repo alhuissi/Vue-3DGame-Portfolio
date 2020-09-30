@@ -5,200 +5,533 @@
       <v-btn text id="pregunta" @click="open()"
         ><v-icon text large color="#ffffff">mdi-help</v-icon>
       </v-btn>
-      <!--v-btn text id="esc" @click="onUnLock()"
-        ><v-icon text large color="#ffffff">mdi-keyboard-esc</v-icon></v-btn
-      -->
 
-          <div id="presentacion">
-            <!--v-btn text id="cruz" @click="close()"
-              ><v-icon text color="#ffffff">mdi-close</v-icon></v-btn
-            -->
-            <v-container fluid>
-              <v-row>
-                <v-col cols="4">
-                  <v-row>
-                    <div class="container">
-                      <v-img
-                        :src="image_srcAL"
-                        class="img1"
-                        contain
-                        position="100% 0px"
-                        ></v-img
-                      >
-                    </div>
-                  </v-row>
-                  <v-row class="iconos">
-                    <a href="https://www.github.com/alhuissi" target="_blank">
-                      <v-icon
-                        color="#ffffff"
-                        class="iconContacto"
-                        target="_blank"
-                        href="https://www.github.com/alhuissi"
-                        >mdi-github</v-icon
-                      >
-                      <div id="gitHub">GitHub</div>
-                    </a>
-
-                    <a href="mailto:alfredo@thedeval.com" target="_blank">
-                      <v-icon
-                        color="#ffffff"
-                        class="iconContacto"
-                        target="_blank"
-                        href="mailto:alfredo@thedeval.com"
-                        >mdi-email</v-icon
-                      >
-                      <div id="enviarMail">Email</div>
-                    </a>
-                  </v-row>
-                </v-col>
-                <v-col cols="8">
-                  <div class="parrafo">
-                    <v-card
-                      style="background-color:rgba(0,0,0,0);color:white;"
-                      ><v-card-title style="font-size:4vh;margin-left:-2vh;">{{
-                        $t("salutation")
-                      }}</v-card-title></v-card
-                    >
-                    <p>
-                      <span style="padding-left:5vh;">
-                        {{ $t("home1par") }}</span
-                      >
+      <div id="presentacion">
+        <!-- Scroll solo en versión para celular -->
+        <vue-scroll v-if="this.isMobile" :ops="ops">
+          <v-container fluid>
+            <v-row style="padding-left:2vw;padding-bottom:1vh;">
+              <v-col cols="12" md="4" align="center">
+                <v-card class="serviciosCard flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <v-icon size="100" color="orange">
+                        mdi-monitor-cellphone
+                      </v-icon>
                       <br />
-                      <!--span style="padding-left: 1vw;">
-                    {{ $t("home2par") }}Javascript, VueJS, Angular, Java, PHP,
-                    Python.</span-->
-                    </p>
-                    <v-card
-                      router
-                      to="/skills"
-                      style="background-color: rgba(0,0,0,0); color: white;"
-                      ><v-card-title class="verHabilidades"
-                        ><v-icon color="#0fffff">mdi-arrow-right</v-icon
-                        >{{ $t("home1text") }}</v-card-title
-                      ></v-card
-                    >
-                    <v-card
-                      router
-                      to="/portafolios"
-                      style="background-color: rgba(0,0,0,0); color: white;"
-                      ><v-card-title class="verHabilidades"
-                        ><v-icon color="#0fffff">mdi-arrow-right</v-icon
-                        >{{ $t("home2text") }}</v-card-title
-                      ></v-card
-                    >
-                    <v-card
-                      router
-                      to="/contact"
-                      style="background-color: rgba(0,0,0,0); color: white;margin-bottom:10px;"
-                      ><v-card-title class="verHabilidades"
-                        ><v-icon color="#0fffff">mdi-arrow-right</v-icon
-                        >{{ $t("home3text") }}</v-card-title
-                      ></v-card
-                    >
+                      <div
+                        style="
+                          color: white;
+                          font-family: coolvetica;
+                          font-size: calc(16px + 0.3vw);
+                          width: 80%;
+                          margin-top: 1vh;
+                        "
+                      >
+                        {{ $t("home1service") }}
+                      </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <v-row no-gutters><v-icon small style="margin-right:5px;" color="orange">mdi-circle</v-icon>{{$t("home1service_a")}} </v-row>
+                        <v-row no-gutters><v-icon small style="margin-right:5px;" color="orange">mdi-circle</v-icon>{{$t("home1service_b")}} </v-row>
+                        <v-row no-gutters><v-icon small style="margin-right:5px;" color="orange">mdi-circle</v-icon>{{$t("home1service_c")}} </v-row>
+                        <v-row no-gutters><v-icon small style="margin-right:5px;" color="orange">mdi-circle</v-icon>{{$t("home1service_d")}} </v-row>
+                    </div>
                   </div>
-                </v-col>
-              </v-row>
-            </v-container>
-          </div>
+                </v-card>
+              </v-col>
+              <v-col cols="12" md="4" align="center">
+                <v-card class="serviciosCard flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <v-icon size="100" color="orange">
+                        mdi-code-tags-check
+                      </v-icon>
+                      <br />
+                      <div
+                        style="
+                          color: white;
+                          font-family: coolvetica;
+                          font-size: calc(16px + 0.3vw);
+                          width: 80%;
+                          margin-top: 1vh;
+                        "
+                      >
+                        {{ $t("home2service") }}
+                      </div>
+                    </div>
+                    <div class="flip-card-back">
+                      <v-row no-gutters><v-icon small style="margin-right:5px;" color="orange">mdi-circle</v-icon>{{$t("home2service_a")}} </v-row>
+                      <v-row no-gutters><v-icon small style="margin-right:5px;" color="orange">mdi-circle</v-icon>{{$t("home2service_b")}} </v-row>
+                      <v-row no-gutters><v-icon small style="margin-right:5px;" color="orange">mdi-circle</v-icon>{{$t("home2service_c")}} </v-row>
+                      <v-row no-gutters><v-icon small style="margin-right:5px;" color="orange">mdi-circle</v-icon>{{$t("home2service_d")}} </v-row>
+                    </div>
+                  </div>
+                </v-card>
+              </v-col>
+              <v-col cols="12" md="4" align="center">
+                <v-card class="serviciosCard flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <v-icon size="100" color="orange">
+                        mdi-database-lock
+                      </v-icon>
+                      <br />
+                      <div
+                        style="
+                          color: white;
+                          font-family: coolvetica;
+                          font-size: calc(16px + 0.3vw);
+                          width: 80%;
+                          margin-top: 1vh;
+                        "
+                      >
+                        {{ $t("home3service") }}
+                      </div>
+                    </div>
+                    <div class="flip-card-back">
+                      <v-row no-gutters><v-icon small style="margin-right:5px;" color="orange">mdi-circle</v-icon>{{$t("home3service_a")}} </v-row>
+                      <v-row no-gutters><v-icon small style="margin-right:5px;" color="orange">mdi-circle</v-icon>{{$t("home3service_b")}} </v-row>
+                      <v-row no-gutters><v-icon small style="margin-right:5px;" color="orange">mdi-circle</v-icon>{{$t("home3service_c")}} </v-row>
+                      <v-row no-gutters><v-icon small style="margin-right:5px;" color="orange">mdi-circle</v-icon>{{$t("home3service_d")}} </v-row>
+                    </div>
+                  </div>
+                </v-card>
+              </v-col>
+            </v-row>
+            <v-row no-gutters>
+              <v-col cols="12" align="center">
+                <div class="happyCustomers" style="color:white;font-family:coolvetica;text-transform:uppercase;">
+                 { {{$t("homeTextClients")}} }
+                </div>
+              </v-col>
+            </v-row>
+            <v-row no-gutters>
+              <v-col cols="12" align="center">
+                <v-carousel
+                  id="testimonios"
+                  hide-delimiters
+                  :show-arrows="false"
+                  cycle>
+                  <v-carousel-item
+                    reverse-transition="fade-transition"
+                    transition="fade-transition"
+                  >
+                    <v-sheet
+                      style="background-color: rgba(0, 0, 0, 0)"
+                      height="100%"
+                    >
+                      <v-row align="center" justify="center">
+                        <div id="testimonioText">
+                          "{{ $t("testimonio1") }}" <br />
+                          <v-img
+                            :src="require('@/assets/logos/logo-makine.png')"
+                            height="100px"
+                            width="100px"
+                            style="
+                              margin-left: auto;
+                              margin-right: auto;
+                              background-color: rgba(255, 255, 255, 0.9);
+                              border-radius: 50px;
+                              margin-top: 1vh;
+                            "
+                          ></v-img>
+                        </div>
+                      </v-row>
+                    </v-sheet>
+                  </v-carousel-item>
+                  <v-carousel-item
+                    reverse-transition="fade-transition"
+                    transition="fade-transition"
+                  >
+                    <v-sheet
+                      style="background-color: rgba(0, 0, 0, 0)"
+                      height="100%"
+                    >
+                      <v-row align="center" justify="center">
+                        <div id="testimonioText">
+                          "{{ $t("testimonio2") }}" <br />
+                          <v-img
+                            :src="require('@/assets/logos/logo-casa.png')"
+                            height="100px"
+                            width="100px"
+                            style="
+                              margin-left: auto;
+                              margin-right: auto;
+                              background-color: rgba(255, 255, 255, 0.9);
+                              border-radius: 50px;
+                              margin-top: 1vh;
+                            "
+                          ></v-img>
+                        </div>
+                      </v-row> </v-sheet
+                  ></v-carousel-item>
+                  <v-carousel-item
+                    reverse-transition="fade-transition"
+                    transition="fade-transition"
+                  >
+                    <v-sheet
+                      style="background-color: rgba(0, 0, 0, 0)"
+                      height="100%"
+                    >
+                      <v-row align="center" justify="center">
+                        <div id="testimonioText">
+                          "{{ $t("testimonio3") }}" <br />
+                          <v-img
+                            :src="require('@/assets/logos/logo-l-vk.png')"
+                            height="100px"
+                            width="100px"
+                            style="
+                              margin-left: auto;
+                              margin-right: auto;
+                              background-color: rgba(255, 255, 255, 0.9);
+                              border-radius: 50px;
+                              margin-top: 1vh;
+                            "
+                          ></v-img>
+                        </div>
+                      </v-row> </v-sheet
+                  ></v-carousel-item>
+                  <v-carousel-item
+                    reverse-transition="fade-transition"
+                    transition="fade-transition"
+                  >
+                    <v-sheet
+                      style="background-color: rgba(0, 0, 0, 0)"
+                      height="100%"
+                    >
+                      <v-row align="center" justify="center">
+                        <div id="testimonioText">
+                          "{{ $t("testimonio4") }}" <br />
+                          <v-img
+                            :src="require('@/assets/logos/logo-beatup.png')"
+                            height="100px"
+                            width="100px"
+                            style="
+                              margin-left: auto;
+                              margin-right: auto;
+                              background-color: rgba(255, 255, 255, 0.9);
+                              border-radius: 50px;
+                              margin-top: 1vh;
+                            "
+                          ></v-img>
+                        </div>
+                      </v-row> </v-sheet
+                  ></v-carousel-item>
+                </v-carousel>
+              </v-col>
+            </v-row>
+          </v-container>
+        </vue-scroll>
+
+        <v-container v-if="!this.isMobile" fluid>
+            <v-row style="padding-left:2vw;padding-bottom:1vh;">
+              <v-col cols="12" md="4" align="center">
+                <v-card class="serviciosCard flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <v-icon size="100" color="orange">
+                        mdi-monitor-cellphone
+                      </v-icon>
+                      <br />
+                      <div
+                        style="
+                          color: white;
+                          font-family: coolvetica;
+                          font-size: calc(16px + 0.3vw);
+                          width: 80%;
+                          margin-top: 1vh;
+                        "
+                      >
+                        {{ $t("home1service") }}
+                      </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <v-row no-gutters><v-icon small style="margin-right:5px;" color="orange">mdi-circle</v-icon>{{$t("home1service_a")}} </v-row>
+                        <v-row no-gutters><v-icon small style="margin-right:5px;" color="orange">mdi-circle</v-icon>{{$t("home1service_b")}} </v-row>
+                        <v-row no-gutters><v-icon small style="margin-right:5px;" color="orange">mdi-circle</v-icon>{{$t("home1service_c")}} </v-row>
+                        <v-row no-gutters><v-icon small style="margin-right:5px;" color="orange">mdi-circle</v-icon>{{$t("home1service_d")}} </v-row>
+                    </div>
+                  </div>
+                </v-card>
+              </v-col>
+              <v-col cols="12" md="4" align="center">
+                <v-card class="serviciosCard flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <v-icon size="100" color="orange">
+                        mdi-code-tags-check
+                      </v-icon>
+                      <br />
+                      <div
+                        style="
+                          color: white;
+                          font-family: coolvetica;
+                          font-size: calc(16px + 0.3vw);
+                          width: 80%;
+                          margin-top: 1vh;
+                        "
+                      >
+                        {{ $t("home2service") }}
+                      </div>
+                    </div>
+                    <div class="flip-card-back">
+                      <v-row no-gutters><v-icon small style="margin-right:5px;" color="orange">mdi-circle</v-icon>{{$t("home2service_a")}} </v-row>
+                      <v-row no-gutters><v-icon small style="margin-right:5px;" color="orange">mdi-circle</v-icon>{{$t("home2service_b")}} </v-row>
+                      <v-row no-gutters><v-icon small style="margin-right:5px;" color="orange">mdi-circle</v-icon>{{$t("home2service_c")}} </v-row>
+                      <v-row no-gutters><v-icon small style="margin-right:5px;" color="orange">mdi-circle</v-icon>{{$t("home2service_d")}} </v-row>
+                    </div>
+                  </div>
+                </v-card>
+              </v-col>
+              <v-col cols="12" md="4" align="center">
+                <v-card class="serviciosCard flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <v-icon size="100" color="orange">
+                        mdi-database-lock
+                      </v-icon>
+                      <br />
+                      <div
+                        style="
+                          color: white;
+                          font-family: coolvetica;
+                          font-size: calc(16px + 0.3vw);
+                          width: 80%;
+                          margin-top: 1vh;
+                        "
+                      >
+                        {{ $t("home3service") }}
+                      </div>
+                    </div>
+                    <div class="flip-card-back">
+                      <v-row no-gutters><v-icon small style="margin-right:5px;" color="orange">mdi-circle</v-icon>{{$t("home3service_a")}} </v-row>
+                      <v-row no-gutters><v-icon small style="margin-right:5px;" color="orange">mdi-circle</v-icon>{{$t("home3service_b")}} </v-row>
+                      <v-row no-gutters><v-icon small style="margin-right:5px;" color="orange">mdi-circle</v-icon>{{$t("home3service_c")}} </v-row>
+                      <v-row no-gutters><v-icon small style="margin-right:5px;" color="orange">mdi-circle</v-icon>{{$t("home3service_d")}} </v-row>
+                    </div>
+                  </div>
+                </v-card>
+              </v-col>
+            </v-row>
+            <v-row no-gutters>
+              <v-col cols="12" align="center">
+                <div class="happyCustomers" style="color:white;font-family:coolvetica;text-transform:uppercase;">
+                 { {{$t("homeTextClients")}} }
+                </div>
+              </v-col>
+            </v-row>
+            <v-row no-gutters>
+              <v-col cols="12" align="center">
+                <v-carousel
+                  id="testimonios"
+                  hide-delimiters
+                  :show-arrows="false"
+                  cycle>
+                  <v-carousel-item
+                    reverse-transition="fade-transition"
+                    transition="fade-transition"
+                  >
+                    <v-sheet
+                      style="background-color: rgba(0, 0, 0, 0)"
+                      height="100%"
+                    >
+                      <v-row align="center" justify="center">
+                        <div id="testimonioText">
+                          "{{ $t("testimonio1") }}" <br />
+                          <v-img
+                            :src="require('@/assets/logos/logo-makine.png')"
+                            height="100px"
+                            width="100px"
+                            style="
+                              margin-left: auto;
+                              margin-right: auto;
+                              background-color: rgba(255, 255, 255, 0.9);
+                              border-radius: 50px;
+                              margin-top: 1vh;
+                            "
+                          ></v-img>
+                        </div>
+                      </v-row>
+                    </v-sheet>
+                  </v-carousel-item>
+                  <v-carousel-item
+                    reverse-transition="fade-transition"
+                    transition="fade-transition"
+                  >
+                    <v-sheet
+                      style="background-color: rgba(0, 0, 0, 0)"
+                      height="100%"
+                    >
+                      <v-row align="center" justify="center">
+                        <div id="testimonioText">
+                          "{{ $t("testimonio2") }}" <br />
+                          <v-img
+                            :src="require('@/assets/logos/logo-casa.png')"
+                            height="100px"
+                            width="100px"
+                            style="
+                              margin-left: auto;
+                              margin-right: auto;
+                              background-color: rgba(255, 255, 255, 0.9);
+                              border-radius: 50px;
+                              margin-top: 1vh;
+                            "
+                          ></v-img>
+                        </div>
+                      </v-row> </v-sheet
+                  ></v-carousel-item>
+                  <v-carousel-item
+                    reverse-transition="fade-transition"
+                    transition="fade-transition"
+                  >
+                    <v-sheet
+                      style="background-color: rgba(0, 0, 0, 0)"
+                      height="100%"
+                    >
+                      <v-row align="center" justify="center">
+                        <div id="testimonioText">
+                          "{{ $t("testimonio3") }}" <br />
+                          <v-img
+                            :src="require('@/assets/logos/logo-l-vk.png')"
+                            height="100px"
+                            width="100px"
+                            style="
+                              margin-left: auto;
+                              margin-right: auto;
+                              background-color: rgba(255, 255, 255, 0.9);
+                              border-radius: 50px;
+                              margin-top: 1vh;
+                            "
+                          ></v-img>
+                        </div>
+                      </v-row> </v-sheet
+                  ></v-carousel-item>
+                  <v-carousel-item
+                    reverse-transition="fade-transition"
+                    transition="fade-transition"
+                  >
+                    <v-sheet
+                      style="background-color: rgba(0, 0, 0, 0)"
+                      height="100%"
+                    >
+                      <v-row align="center" justify="center">
+                        <div id="testimonioText">
+                          "{{ $t("testimonio4") }}" <br />
+                          <v-img
+                            :src="require('@/assets/logos/logo-beatup.png')"
+                            height="100px"
+                            width="100px"
+                            style="
+                              margin-left: auto;
+                              margin-right: auto;
+                              background-color: rgba(255, 255, 255, 0.9);
+                              border-radius: 50px;
+                              margin-top: 1vh;
+                            "
+                          ></v-img>
+                        </div>
+                      </v-row> </v-sheet
+                  ></v-carousel-item>
+                </v-carousel>
+              </v-col>
+            </v-row>
+        </v-container>
+      </div>
+
       <v-card>
         <div id="flechaPlay1">
           <v-icon x-large color="#ffffff" class="neon">mdi-arrow-right</v-icon>
         </div>
         <v-row justify="center">
-          <v-card-title id="botonPlay" @click="onClickInstructions()">{{$t("playButton")}}</v-card-title>
+          <v-card-title id="botonPlay" @click="onClickInstructions()">{{
+            $t("playButton")
+          }}</v-card-title>
         </v-row>
-        <!-- div id="flechaPlay2">
-          <v-icon large color="#ffffff">mdi-arrow-left</v-icon>
-        </div -->
       </v-card>
     </div>
 
+    <v-img
+      :src="image_src"
+      contain
+      width="50px"
+      height="50px"
+      style="position: fixed; bottom: 2vh; left: 2vw; z-index: 999"
+    ></v-img>
+
     <div id="instructions">
-      <span style="font-size:35px;text-transform:uppercase;text-shadow: 0px 0px 0px red;text-decoration:underline;"
+      <span
+        style="
+          font-size: 35px;
+          text-transform: uppercase;
+          text-shadow: 0px 0px 0px red;
+          text-decoration: underline;
+        "
         >{{ $t("home3instrucciones") }}</span
       >
       <br /><br />
       {{ $t("home3movimiento") }}:
       <div
-        style='text-shadow: 0px 0px 0px red;font-family:"coolvetica";font-size:25px;margin-bottom:10px;margin-top:5px;'
+        style="
+          text-shadow: 0px 0px 0px red;
+          font-family: 'coolvetica';
+          font-size: 25px;
+          margin-bottom: 10px;
+          margin-top: 5px;
+        "
       >
         WASD
       </div>
       {{ $t("home3correr") }}:
       <div
-        style='text-shadow: 0px 0px 0px red;font-family:"coolvetica";font-size:25px;margin-bottom:10px;'
+        style="
+          text-shadow: 0px 0px 0px red;
+          font-family: 'coolvetica';
+          font-size: 25px;
+          margin-bottom: 10px;
+        "
       >
         SHIFT
       </div>
       {{ $t("home3saltar") }}:
       <div
-        style='text-shadow: 0px 0px 0px red;font-family:"coolvetica";font-size:25px;margin-bottom:10px;'
+        style="
+          text-shadow: 0px 0px 0px red;
+          font-family: 'coolvetica';
+          font-size: 25px;
+          margin-bottom: 10px;
+        "
       >
         Espacio
       </div>
       {{ $t("home3volar") }}
       <div
-        style='text-shadow: 0px 0px 0px red;font-family:"coolvetica";font-size:25px;margin-bottom:10px;'
+        style="
+          text-shadow: 0px 0px 0px red;
+          font-family: 'coolvetica';
+          font-size: 25px;
+          margin-bottom: 10px;
+        "
       >
         F
       </div>
       {{ $t("home3camara") }}:
       <div
-        style='text-shadow: 0px 0px 0px red;font-family:"coolvetica";font-size:25px;margin-bottom:10px;'
+        style="
+          text-shadow: 0px 0px 0px red;
+          font-family: 'coolvetica';
+          font-size: 25px;
+          margin-bottom: 10px;
+        "
       >
         Mouse
       </div>
     </div>
 
-    <v-carousel id="testimonios" hide-delimiters :show-arrows="false" cycle>
-      <v-carousel-item reverse-transition="fade-transition" transition="fade-transition">
-        <v-sheet style="background-color:rgba(0,0,0,0);" height="100%">
-          <v-row align="center" justify="center">
-            <div id="testimonioText">
-              "{{ $t("testimonio1") }}" <br />
-              <v-img
-                :src="require('@/assets/logos/logo-makine.png')"
-                height="100px"
-                width="100px"
-                style="margin-left:auto;margin-right:auto;"
-              ></v-img>
-            </div>
-          </v-row>
-        </v-sheet>
-      </v-carousel-item>
-      <v-carousel-item reverse-transition="fade-transition" transition="fade-transition">
-        <v-sheet style="background-color:rgba(0,0,0,0);" height="100%">
-          <v-row align="center" justify="center">
-            <div id="testimonioText">
-              "{{ $t("testimonio2") }}" <br />
-              <v-img
-                :src="require('@/assets/logos/logo-casa.png')"
-                height="100px"
-                width="100px"
-                style="margin-left:auto;margin-right:auto;"
-              ></v-img>
-            </div>
-          </v-row> </v-sheet
-      ></v-carousel-item>
-      <v-carousel-item reverse-transition="fade-transition" transition="fade-transition">
-        <v-sheet style="background-color:rgba(0,0,0,0);" height="100%">
-          <v-row align="center" justify="center">
-            <div id="testimonioText">
-              "{{ $t("testimonio3") }}" <br />
-              <v-img
-                :src="require('@/assets/logos/logo-l-vk.png')"
-                height="100px"
-                width="100px"
-                style="margin-left:auto;margin-right:auto;"
-              ></v-img>
-            </div>
-          </v-row> </v-sheet
-      ></v-carousel-item>
-    </v-carousel>
     <div id="controlesMobile">
       <v-btn
         x-large
-        style="position:fixed;left:43vw;bottom:5vh;"
+        style="position: fixed; left: 43vw; bottom: 5vh"
         icon
         color="white"
         @click="mobileControlDown()"
@@ -206,7 +539,7 @@
       >
       <v-btn
         x-large
-        style="position:fixed;left:32vw;bottom:10vh;"
+        style="position: fixed; left: 32vw; bottom: 10vh"
         icon
         color="white"
         @click="mobileControlLeft()"
@@ -214,7 +547,7 @@
       >
       <v-btn
         x-large
-        style="position:fixed;left:54vw;bottom:10vh;"
+        style="position: fixed; left: 54vw; bottom: 10vh"
         icon
         color="white"
         @click="mobileControlRight()"
@@ -222,7 +555,7 @@
       >
       <v-btn
         x-large
-        style="position:fixed;left:43vw;bottom:16vh;"
+        style="position: fixed; left: 43vw; bottom: 16vh"
         icon
         color="white"
         @click="mobileControlUp()"
@@ -259,6 +592,7 @@ export default {
       moveRight: false,
       running: false,
       canJump: false,
+      isMobile: false,
       prevTime: performance.now(),
       velocity: null,
       direction: null,
@@ -271,11 +605,9 @@ export default {
           sizeStrategy: "percent",
           detectResize: true,
         },
-        scrollPanel: {
-          scrollingX: false,
-        },
+        scrollPanel: {},
         rail: {},
-        bar: { background: "rgba(0,178,255,0.7)" },
+        bar: { background: "#4AD1B6" },
       },
     };
   },
@@ -284,7 +616,7 @@ export default {
     titleTemplate: "%s | Web Developer",
   },
   methods: {
-    init: function() {
+    init: function () {
       document.getElementById("presentacion").style.zIndex = "9";
       this.blocker = document.getElementById("blocker");
       const canvas = document.querySelector("#c");
@@ -490,7 +822,7 @@ export default {
       );
       this.overlay = false;
     },
-    animate: function() {
+    animate: function () {
       requestAnimationFrame(this.animate);
       if (this.model2) {
         this.model2.rotation.z += 0.00002;
@@ -556,15 +888,15 @@ export default {
 
       this.renderer.render(this.scene, this.camera);
     },
-    onWindowResize: function() {
+    onWindowResize: function () {
       this.camera.aspect = window.innerWidth / window.innerHeight;
       this.camera.updateProjectionMatrix();
       this.renderer.setSize(window.innerWidth, window.innerHeight);
     },
-    onClickInstructions: function() {
+    onClickInstructions: function () {
       this.controls.lock();
     },
-    onLock: function() {
+    onLock: function () {
       this.instructions.style.display = "block";
       setTimeout(() => {
         this.instructions.style.opacity = 1;
@@ -587,9 +919,8 @@ export default {
       setTimeout(() => {
         document.getElementById("testimonios").style.opacity = "0";
       }, 500);
-      
     },
-    onUnlock: function() {
+    onUnlock: function () {
       this.blocker.style.display = "block";
       document.getElementById("presentacion").style.opacity = "1";
       document.getElementById("botonPlay").style.opacity = "1";
@@ -621,7 +952,7 @@ export default {
     mobileControlEsc() {
       this.onUnLock();
     },
-    onKeyDown: function(event) {
+    onKeyDown: function (event) {
       switch (event.keyCode) {
         case 38: // up
         case 87: // w
@@ -657,7 +988,7 @@ export default {
           break;
       }
     },
-    onKeyUp: function(event) {
+    onKeyUp: function (event) {
       switch (event.keyCode) {
         case 38: // up
         case 87: // w
@@ -718,6 +1049,10 @@ export default {
     document.addEventListener("keyup", this.onKeyUp, false);
     this.controls.addEventListener("lock", this.onLock, false);
     this.controls.addEventListener("unlock", this.onUnlock, false);
+    if(window.innerWidth < 960){
+      console.log("phone");
+      this.isMobile = true;
+    }
   },
   destroyed() {
     this.renderer.forceContextLoss();
@@ -751,28 +1086,39 @@ export default {
   transition: 925ms;
 }
 #testimonios {
-  position: fixed;
   z-index: 2;
-  top: 3vh!important;
+  top: 1vh !important;
   margin-top: 0vh;
   padding-top: 0vh;
   width: 100%;
-  height:20vh!important;
+  overflow: visible;
 }
 #testimonioText {
   color: rgb(218, 231, 238);
   z-index: 2;
+  width: 95%;
   text-align: center;
 }
 @media (min-width: 960px) {
+  .serviciosCard {
+    background-color: rgb(6, 1, 31) !important;
+    border-style: solid;
+    border-color: lightblue;
+    border-width: 1px;
+    height: 230px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-radius: 20px !important;
+    perspective: 1000px;
+  }
   #instructions {
     position: fixed;
     display: none;
     top: 23vh;
     justify-content: center;
     text-align: center;
-    text-justify:center;
-    width:100vw;
+    text-justify: center;
+    width: 100vw;
     color: #ffffff;
     text-shadow: 2px 2px 4px blue;
     text-align: center;
@@ -801,19 +1147,8 @@ export default {
     letter-spacing: 1.2px;
     background-color: rgba(255, 255, 255, 1);
     cursor: pointer;
-    font-size: 20px;
+    font-size: calc(16px + 0.5vw);
     z-index: 99;
-    box-shadow: 
-      /*3d layers*/ 0px 0px 1px rgb(167, 167, 167),
-      0px 1px 1px rgb(167, 167, 167), 0px 2px 1px rgb(167, 167, 167),
-      1px 1px 1px rgb(167, 167, 167), 1px 2px 1px rgb(167, 167, 167),
-      1px 3px 1px rgb(167, 167, 167), 2px 2px 1px rgb(167, 167, 167),
-      2px 3px 1px rgb(167, 167, 167), 2px 4px 1px rgb(167, 167, 167),
-      1px 1px 3px rgba(0, 0, 0, 0.3), 1px 1px 7px rgba(0, 0, 0, 0.3),
-      /*short soft bottom*/ 0px 2px 2px rgba(0, 0, 0, 0.2),
-      /*left shadow*/ -2px 2px 10px rgba(0, 0, 0, 0.2),
-      /*right shadow*/ 2px 2px 10px rgba(0, 0, 0, 0.2),
-      /*white light*/ 1px 1px 120px rgba(255, 255, 255, 0.5);
     transition: 925ms ease;
   }
   #botonPlay:hover {
@@ -824,7 +1159,7 @@ export default {
     position: fixed;
     z-index: 9;
     bottom: 16.5vh;
-    left: 38vw;
+    left: 40vw;
     animation: play1 500ms linear infinite;
     animation-direction: alternate-reverse;
   }
@@ -838,8 +1173,8 @@ export default {
   }
   #cruz {
     position: absolute;
-    display:none;
-    opacity:0;
+    display: none;
+    opacity: 0;
     color: black;
     top: 10px;
     left: 92%;
@@ -861,19 +1196,21 @@ export default {
   }
   #presentacion {
     position: relative;
-    margin-left: 22vw;
-    margin-right: 22vw;
-    margin-top: 23vh;
-    padding-top: 0vh;
+    margin-left: 18vw;
+    margin-right: 18vw;
+    margin-top: 10vh;
+    padding-top: 2vh;
+    padding-right:2vw;
     text-justify: center !important;
     padding-bottom: 0vh;
     background-color: rgba(0, 0, 0, 0.95);
-    max-height:50vh;
+    height: 90%;
+    max-height: 65vh;
     transition: 725ms ease;
     opacity: 1;
     z-index: 9;
-    border-radius:55px;
-    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 55px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
     animation: cycle 10s infinite alternate-reverse;
     /*box-shadow: 10px 10px 100px rgba(11, 124, 199, 0.5);*/
   }
@@ -881,28 +1218,6 @@ export default {
     transition: 725ms ease;
     opacity: 1;
     background-color: rgba(0, 0, 0, 1);
-  }
-  .parrafo {
-    position: relative;
-    font-family: coolvetica;
-    font-size: 14px;
-    text-justify: center !important;
-    letter-spacing: 0.8px;
-    color: white;
-    width: 35vw;
-    transition: 725ms ease;
-  }
-  .img1 {
-    position: relative;
-    border-radius: 75px;
-    width: 100px;
-    height: 100px;
-    left: 4vw;
-    top: 5vh;
-    transition: all 325ms ease;
-    animation: cycle 10s linear infinite;
-    animation-direction: alternate-reverse;
-    backface-visibility: hidden;
   }
   .middle {
     transition: 0.5s ease;
@@ -916,12 +1231,6 @@ export default {
   }
   .container {
     position: relative;
-  }
-  .img1:hover {
-    filter: contrast(90%) saturate(100%);
-  }
-  .img1:hover .middle {
-    opacity: 1;
   }
   .text {
     opacity: 1;
@@ -946,21 +1255,6 @@ export default {
   .verHabilidades:hover {
     opacity: 0.7;
     transform: translateX(7px);
-  }
-  .iconos {
-    position: relative;
-    top: 15%;
-    left: 39%;
-  }
-  .iconContacto {
-    padding: 5px;
-    transition-duration: 3s ease;
-  }
-  .iconContacto:hover {
-    cursor: pointer;
-    transition-duration: 3s ease;
-    transform: translateY(-18px);
-    opacity: 0.7;
   }
   #gitHub {
     position: absolute;
@@ -1017,58 +1311,66 @@ export default {
   }
   #testimonios {
     top: 10vh;
+    height: 20vh !important;
   }
   #testimonioText {
-    width: 80vw;
-    font-size: 12px;
+    width: 90%;
+    font-size: calc(12px + 0.2vw);
     font-weight: 600;
-    letter-spacing:0.3px;
+    letter-spacing: 0.3px;
     text-shadow: 1px 1px 10px rgba(0, 0, 0, 1);
   }
   @media (min-height: 900px) {
     #presentacion {
-      margin-top: 25vh;
+      margin-top: 10vh;
+      height: 100%;
+      max-height: 58vh;
     }
-    .parrafo{
-      font-size: calc(10px + 0.5vw);
-    }
-    #flechaPlay1{
+    #flechaPlay1 {
       bottom: 21.5vh;
     }
-    #botonPlay{
+    #botonPlay {
       font-size: 40px;
       padding: 15px;
       padding-top: 10px;
       padding-bottom: 20px;
-      bottom:20vh;
-    }
-    .img1{
-      width: 150px;
-      height: 150px;
+      bottom: 20vh;
     }
     .iconContacto:hover {
       transform: translateY(-7px);
     }
     #testimonioText {
-      width: 80vw;
-      font-size: 20px;
+      width: 90%;
+      font-size: 16px;
       font-weight: 600;
       text-shadow: 1px 1px 10px rgba(0, 0, 0, 1);
     }
-    .verHabilidades{
+    .verHabilidades {
       font-size: calc(10px + 0.5vw);
     }
   }
 }
 @media (max-width: 960px) {
+  .serviciosCard {
+    background-color:rgb(6, 1, 31) !important;
+    border-style: solid;
+    border-color: lightblue;
+    border-width: 1px;
+    height: 200px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-right: 2vw;
+    border-radius: 20px !important;
+    perspective: 1000px;
+  }
   #testimonios {
-    top: 8vh;
-    opacity:0;
-    display:none;
+    margin-top:10vh;
+    margin-left:2vw;
   }
   #testimonioText {
     width: 90vw;
-    font-size: 12px;
+    font-size: calc(16px + 0.1vw);
+    padding-right:5vw;
     font-weight: 600;
     text-shadow: 1px 1px 10px rgba(0, 0, 0, 1);
   }
@@ -1086,23 +1388,15 @@ export default {
     position: fixed;
     left: 7vw;
     bottom: 8vh;
-    /* 
-        display: -webkit-box;
-        display: -moz-box;
-        display: box;
-        */
     -webkit-box-orient: horizontal;
     -moz-box-orient: horizontal;
     box-orient: horizontal;
-
     -webkit-box-pack: center;
     -moz-box-pack: center;
     box-pack: center;
-
     -webkit-box-align: center;
     -moz-box-align: center;
     box-align: center;
-
     color: #ffffff;
     text-align: center;
     font-family: brokenz;
@@ -1126,23 +1420,10 @@ export default {
     left: 38%;
     bottom: 8vh;
     font-family: "quantum";
-
     background-color: rgba(255, 255, 255, 1);
     cursor: pointer;
-
     font-size: 20px;
     z-index: 99;
-    box-shadow: 
-      /*3d layers*/ 0px 0px 1px rgb(167, 167, 167),
-      0px 1px 1px rgb(167, 167, 167), 0px 2px 1px rgb(167, 167, 167),
-      1px 1px 1px rgb(167, 167, 167), 1px 2px 1px rgb(167, 167, 167),
-      1px 3px 1px rgb(167, 167, 167), 2px 2px 1px rgb(167, 167, 167),
-      2px 3px 1px rgb(167, 167, 167), 2px 4px 1px rgb(167, 167, 167),
-      1px 1px 3px rgba(0, 0, 0, 0.3), 1px 1px 7px rgba(0, 0, 0, 0.3),
-      /*short soft bottom*/ 0px 2px 2px rgba(0, 0, 0, 0.2),
-      /*left shadow*/ -2px 2px 10px rgba(0, 0, 0, 0.2),
-      /*right shadow*/ 2px 2px 10px rgba(0, 0, 0, 0.2),
-      /*white light*/ 1px 1px 120px rgba(255, 255, 255, 0.5);
     transition: 925ms ease;
     animation: cycle 10s linear infinite;
     animation-direction: alternate-reverse;
@@ -1181,17 +1462,17 @@ export default {
   }
   #presentacion {
     position: relative;
-    width:100vw;
-    height:100vh;
-    padding-top:15vh;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 15vh;
     border: 1px;
     border-radius: 5px;
     border-style: none;
     border-color: white;
     text-justify: center !important;
-    display:block;
+    display: block;
     padding-bottom: 3vh;
-    background-color: rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.5);
     transition: 725ms ease;
     animation: cycle 10s linear infinite;
     animation-direction: alternate-reverse;
@@ -1201,42 +1482,6 @@ export default {
   #presentacion:hover {
     opacity: 1;
   }
-  .parrafo {
-    position: relative;
-    font-family: coolvetica;
-    font-size: 16px;
-    text-align: justify;
-    text-justify: inter-word;
-    color: white;
-    width: 80vw;
-    top: 7vh;
-    left: -27vw;
-    transition: 725ms ease;
-  }
-  .img1 {
-    position: absolute;
-    top: -20px;
-    border-radius: 50px;
-    width: 100px;
-    height: 100px;
-    left: 34vw;
-    box-shadow: 
-      /*3d layers*/ 0px 0px 1px rgb(167, 167, 167),
-      0px 1px 1px rgb(167, 167, 167), 0px 2px 1px rgb(167, 167, 167),
-      1px 1px 1px rgb(167, 167, 167), 1px 2px 1px rgb(167, 167, 167),
-      1px 3px 1px rgb(167, 167, 167), 2px 2px 1px rgb(167, 167, 167),
-      2px 3px 1px rgb(167, 167, 167), 2px 4px 1px rgb(167, 167, 167),
-      1px 1px 3px rgba(0, 0, 0, 0.3), 1px 1px 7px rgba(0, 0, 0, 0.3),
-      /*short soft bottom*/ 0px 2px 2px rgba(0, 0, 0, 0.2),
-      /*left shadow*/ -2px 2px 10px rgba(0, 0, 0, 0.2),
-      /*right shadow*/ 2px 2px 10px rgba(0, 0, 0, 0.2),
-      /*white light*/ 1px 1px 120px rgba(255, 255, 255, 0.5);
-    transition: 725ms ease;
-    animation: cycle 10s linear infinite;
-    animation-direction: alternate-reverse;
-    backface-visibility: hidden;
-  }
-
   .middle {
     transition: 0.5s ease;
     opacity: 0;
@@ -1250,12 +1495,6 @@ export default {
   .container {
     position: relative;
   }
-  .img1:hover {
-    opacity: 0.9;
-  }
-  .img1:hover .middle {
-    opacity: 1;
-  }
   .text {
     opacity: 0.7;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 1);
@@ -1263,9 +1502,6 @@ export default {
     cursor: pointer;
     font-family: coolvetica;
     transition: 725ms ease;
-  }
-  .img1:hover .text {
-    transform: translateX(80%);
   }
   .verHabilidades {
     color: white;
@@ -1278,39 +1514,10 @@ export default {
     transform: translateX(7px);
     font-size: 12px;
   }
-  .iconos {
-    position: relative;
-    top: 5vh;
-    left: 70vw;
-  }
-  .iconContacto {
-    padding: 5px;
-    transition-duration: 3s ease;
-    z-index: 999;
-  }
-  .iconContacto:hover {
-    cursor: pointer;
-    transition-duration: 3s ease;
-    transform: translateY(-7px);
-    opacity: 0.7;
-  }
-  #gitHub {
-    position: absolute;
-    top: 20%;
-    left: -16%;
-    color: white;
-    transition-duration: 1s ease;
-    opacity: 0;
-    display: none;
-  }
-  #enviarMail {
-    position: absolute;
-    top: 20%;
-    left: 22%;
-    color: white;
-    transition-duration: 1s ease;
-    opacity: 0;
-    display: none;
+  .happyCustomers{
+    padding-right:5vw;
+    margin-top:10vh;
+    font-size:calc(10px + 2vw);
   }
 }
 </style>

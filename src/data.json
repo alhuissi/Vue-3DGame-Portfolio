@@ -44,7 +44,7 @@
       "update": "",
       "color": "white",
       "categories": "Website, real estate",
-      "techUsed": "Wordpress, Javascript, CSS",
+      "techUsed": "Wordpress, HTML, Javascript, CSS",
       "resumen": ""
     },
     "alquimia": {
@@ -58,7 +58,7 @@
       "update": "",
       "color": "white",
       "categories": "Website, architecture, portfolio",
-      "techUsed": "Vue, Firebase, Fullpage Scroll",
+      "techUsed": "Vue, Firebase, Fullpage.js",
       "resumen": ""
     },
     "rubik": {
@@ -86,7 +86,7 @@
       "update": "",
       "color": "white",
       "categories": "E-commerce, technology",
-      "techUsed": "Shopify, PHP",
+      "techUsed": "Shopify, Liquid, HTML, PHP",
       "resumen": ""
     },
     "Oficina Global": {
@@ -117,13 +117,41 @@
       "techUsed": "Wordpress, CSS",
       "resumen": ""
     },
+    "kiwen": {
+      "title": "Kiwen",
+      "id": "kiwen",
+      "ano": "2019",
+      "tipo": "Ecommerce",
+      "description": "Ecommerce de productos naturales",
+      "path": "https://kiwen.cl/home",
+      "posted": "2019.11.18",
+      "update": "",
+      "color": "white",
+      "categories": "E-commerce, organic",
+      "techUsed": "Wordpress, WooCommerce, Javascript, PHP",
+      "resumen": ""
+    },
+    "beatup": {
+      "title": "Beatup",
+      "id": "beatup",
+      "ano": "2020",
+      "tipo": "Web App (beta)",
+      "description": "Marketplace de productos digitales (música)",
+      "path": "https://beatup.cl",
+      "posted": "2019.11.18",
+      "update": "",
+      "color": "white",
+      "categories": "E-commerce, marketplace, music",
+      "techUsed": "Vue, Firebase, PHP",
+      "resumen": ""
+    },
     "IDEa": {
       "title": "Compañia IDEa",
       "id": "idea",
       "ano": "2019",
       "tipo": "Website",
       "description": "Compañia de Danza",
-      "path": "https://companiaidea.cl",
+      "path": "https://companiaidea.yendo.cl",
       "posted": "2019.11.18",
       "update": "",
       "color": "white",
@@ -145,18 +173,18 @@
       "techUsed": "Wordpress, CSS",
       "resumen": ""
     },
-    "kiwen": {
-      "title": "Kiwen",
-      "id": "kiwen",
-      "ano": "2019",
-      "tipo": "Ecommerce",
-      "description": "Ecommerce de productos naturales",
-      "path": "https://kiwen.cl",
+    "trap2day": {
+      "title": "Trap2day",
+      "id": "trap2day",
+      "ano": "2020",
+      "tipo": "Blog",
+      "description": "Blog de música urbana",
+      "path": "https://trap2day.cl",
       "posted": "2019.11.18",
       "update": "",
       "color": "white",
-      "categories": "E-commerce, organic",
-      "techUsed": "Wordpress, WooCommerce, Javascript, PHP",
+      "categories": "Blog, music",
+      "techUsed": "Wordpress, WooCommerce, Javascript, PHP, CSS",
       "resumen": ""
     }
   },

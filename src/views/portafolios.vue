@@ -97,8 +97,7 @@
               @click="
                 proyectoSelected = proyecto;
                 overlayPreview = !overlayPreview;
-              "
-            >
+              ">
               <div class="middlePortafolios">
                 <v-btn fab text class="textPortafolios"
                   ><v-icon x-large>mdi-magnify</v-icon></v-btn
