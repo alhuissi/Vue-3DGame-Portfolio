@@ -1,7 +1,14 @@
 <template>
   <section>
+    <canvas id="l"></canvas>
     <div id="blockerLab">
-      <div id="instructionsLab">
+      <v-row justify="center">
+        <v-card id="botonPlayLab" @click="onClickInstructions2()">
+            {{ $t("playButton") }}
+          </v-card>
+        </v-row>
+    </div>
+    <div id="instructionsLab">
         <br /><br />
         <span style="font-size:36px;">{{ $t("home3instrucciones") }}:</span>
         <br /><br />
@@ -10,11 +17,7 @@
         {{ $t("home3saltar") }}: ESPACIO<br />
         {{ $t("home3volar") }}: F <br />
         {{ $t("home3camara") }}: MOUSE <br />
-        <v-card id="botonPlayLab" @click="onClickInstructions2()">
-          {{ $t("playButton") }}
-        </v-card>
       </div>
-    </div>
   </section>
 </template>
 
@@ -22,6 +25,7 @@
 import * as Three from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { PointerLockControls } from "three/examples/jsm/controls/PointerLockControls.js";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 export default {
   data() {
@@ -33,6 +37,8 @@ export default {
       controls: null,
       model: null,
       model2: null,
+      model3: null,
+      model4: null,
       raycaster: null,
       instructions: null,
       objects: [],
@@ -42,10 +48,10 @@ export default {
       moveRight: false,
       running: false,
       canJump: false,
+      isMobile: false,
       prevTime: performance.now(),
       velocity: null,
       direction: null,
-      //color: null,
       blocker: null,
     };
   },
@@ -54,30 +60,45 @@ export default {
     titleTemplate: "%s | Lab",
   },
   methods: {
-    init: function() {
+    init: function () {
       this.blocker = document.getElementById("blockerLab");
-
+      const canvas = document.querySelector("#l");
+      this.renderer = new Three.WebGLRenderer({ canvas, antialias: true });
       this.camera = new Three.PerspectiveCamera(
         75,
         window.innerWidth / window.innerHeight,
         0.1,
         1000
       );
-      this.camera.position.y = 10;
-      this.camera.position.z = 40;
-
       this.scene = new Three.Scene();
-      this.scene.background = new Three.Color(0x010214);
-      this.scene.fog = new Three.Fog(0xffffff, 0, 750);
 
-      let light = new Three.HemisphereLight(0xeeeeff, 0x777788, 1);
+      if (window.innerWidth > 960) {
+        this.camera.position.y = 14;
+        this.camera.position.z = 1240;
+        this.controls = new PointerLockControls(this.camera, document.body);
+        this.scene.add(this.controls.getObject());
+      } else {
+        this.camera.position.y = 20;
+        this.camera.position.z = 1500;
+        this.controls = new OrbitControls(
+          this.camera,
+          this.renderer.domElement
+        );
+      }
+
+      //this.scene.background = new Three.Color(0x010214);
+      this.scene.background = new Three.Color(0x000000);
+      this.scene.fog = new Three.Fog(0xffffff, 0, 2500);
+
+      let light = new Three.HemisphereLight(0xffffff, 0x777788, 1);
       light.position.set(0, 400, 0);
       this.scene.add(light);
 
-      this.controls = new PointerLockControls(this.camera, document.body);
-      this.instructions = document.getElementById("instructionsLab");
+      let light3 = new Three.PointLight(0x07fff7, 1, 250);
+      light3.position.set(0, 10, 1000);
+      this.scene.add(light3);
 
-      this.scene.add(this.controls.getObject());
+      this.instructions = document.getElementById("instructionsLab");
 
       this.raycaster = new Three.Raycaster(
         new Three.Vector3(),
@@ -171,10 +192,9 @@ export default {
         this.objects.push(box);
       }
 
-      this.renderer = new Three.WebGLRenderer({ antialias: true });
       this.renderer.setPixelRatio(window.devicePixelRatio);
       this.renderer.setSize(window.innerWidth, window.innerHeight);
-      document.body.appendChild(this.renderer.domElement);
+      this.blocker.appendChild(this.renderer.domElement);
 
       const loader = new GLTFLoader();
 
@@ -183,7 +203,7 @@ export default {
         "/goku/scene.gltf",
         (gltf) => {
           this.scene.add(gltf.scene);
-          gltf.scene.scale.set(20, 20, 20); //scale here!
+          gltf.scene.scale.set(25, 25, 25); //scale here!
           gltf.scene.position.set(0, 2, 0); //position here!
           this.objects.push(gltf.scene);
           this.model = gltf.scene.children[0];
@@ -205,18 +225,57 @@ export default {
         undefined,
         undefined
       );
+      loader.load(
+        "/need_some_space/scene.gltf",
+        (gltf3) => {
+          this.scene.add(gltf3.scene);
+          gltf3.scene.scale.set(0.05, 0.05, 0.05); //scale here!
+          gltf3.scene.position.set(-6, 8, 1240); //position here!
+          this.objects.push(gltf3.scene);
+          this.model2 = gltf3.scene.children[0];
+        },
+        undefined,
+        undefined
+      );
+      loader.load(
+        "/need_some_space/scene.gltf",
+        (gltf4) => {
+          this.scene.add(gltf4.scene);
+          gltf4.scene.scale.set(1, 1, 1); //scale here!
+          gltf4.scene.position.set(500, 500, 1000); //position here!
+          this.objects.push(gltf4.scene);
+          this.model4 = gltf4.scene.children[0];
+        },
+        undefined,
+        undefined
+      );
+      //Pieza
+      loader.load(
+        "/my_workspace/scene.gltf",
+        (gltf) => {
+          this.scene.add(gltf.scene);
+          gltf.scene.scale.set(7, 5, 5); //scale here!
+          gltf.scene.position.set(-7, -15, 1240); //position here!
+          gltf.scene.rotateY;
+          this.objects.push(gltf.scene);
+          this.model3 = gltf.scene.children[0];
+        },
+        undefined,
+        undefined
+      );
+      this.overlay = false;
     },
-    animate: function() {
+    animate: function () {
       requestAnimationFrame(this.animate);
-      /*if(this.model){
-        this.model.rotation.z += 0.01;
-      }*/
       if (this.model2) {
         this.model2.rotation.z += 0.00002;
       }
+      if (this.model4) {
+        this.model4.rotation.z += 0.0002;
+      }
       if (this.controls.isLocked === true) {
         this.raycaster.ray.origin.copy(this.controls.getObject().position);
-        this.raycaster.ray.origin.y -= 10;
+        this.raycaster.ray.origin.y -= 14;
 
         let intersections = this.raycaster.intersectObjects(this.objects);
 
@@ -236,16 +295,16 @@ export default {
 
         if (this.moveForward || this.moveBackward) {
           if (this.running) {
-            this.velocity.z -= this.direction.z * 1000.0 * delta;
+            this.velocity.z -= this.direction.z * 1400.0 * delta;
           } else {
-            this.velocity.z -= this.direction.z * 400.0 * delta;
+            this.velocity.z -= this.direction.z * 700.0 * delta;
           }
         }
         if (this.moveLeft || this.moveRight) {
           if (this.running) {
-            this.velocity.x -= this.direction.x * 1000.0 * delta;
+            this.velocity.x -= this.direction.x * 1400.0 * delta;
           } else {
-            this.velocity.x -= this.direction.x * 400.0 * delta;
+            this.velocity.x -= this.direction.x * 700.0 * delta;
           }
         }
 
@@ -259,34 +318,46 @@ export default {
 
         this.controls.getObject().position.y += this.velocity.y * delta; // new behavior
 
-        if (this.controls.getObject().position.y < 10) {
+        if (this.controls.getObject().position.y < 14) {
           this.velocity.y = 0;
-          this.controls.getObject().position.y = 10;
+          this.controls.getObject().position.y = 14;
           this.canJump = true;
         }
 
         this.prevTime = time;
+      } else {
+        //this.camera.position.z += 0.1;
       }
 
       this.renderer.render(this.scene, this.camera);
     },
-    onWindowResize: function() {
+    onWindowResize: function () {
       this.camera.aspect = window.innerWidth / window.innerHeight;
       this.camera.updateProjectionMatrix();
       this.renderer.setSize(window.innerWidth, window.innerHeight);
     },
-    onClickInstructions2: function() {
+    onClickInstructions2: function () {
       this.controls.lock();
     },
-    onLock2: function() {
-      this.instructions.style.display = "none";
-      this.blocker.style.display = "none";
+    onLock2: function () {
+      this.instructions.style.display = "block";
+      setTimeout(() => {
+        this.instructions.style.opacity = 1;
+      }, 500);
+
+      this.blocker.style.display = "";
+      document.getElementById("botonPlayLab").style.opacity = "0";
+      setTimeout(() => {
+        this.instructions.style.opacity = 0;
+      }, 7000);
     },
-    onUnlock2: function() {
+    onUnlock2: function () {
       this.blocker.style.display = "block";
-      this.instructions.style.display = "";
+      document.getElementById("botonPlayLab").style.opacity = "1";
+      this.instructions.style.display = "none";
+      this.instructions.style.opacity = 0;
     },
-    onKeyDown: function(event) {
+    onKeyDown: function (event) {
       switch (event.keyCode) {
         case 38: // up
         case 87: // w
@@ -322,7 +393,7 @@ export default {
           break;
       }
     },
-    onKeyUp: function(event) {
+    onKeyUp: function (event) {
       switch (event.keyCode) {
         case 38: // up
         case 87: // w
@@ -356,19 +427,22 @@ export default {
     window.addEventListener("resize", this.onWindowResize, false);
     document.addEventListener("keydown", this.onKeyDown, false);
     document.addEventListener("keyup", this.onKeyUp, false);
-    //this.instructions.addEventListener('click', this.onClickInstructions, false);
     this.controls.addEventListener("lock", this.onLock2, false);
     this.controls.addEventListener("unlock", this.onUnlock2, false);
+    document.getElementById("botonPlayLab").style.zIndex = "9999";
+    if(window.innerWidth < 960){
+      console.log("phone");
+      this.isMobile = true;
+    }
   },
   destroyed() {
     this.renderer.forceContextLoss();
-    document.body.removeChild(this.renderer.domElement);
+    //document.body.removeChild(this.renderer.domElement);
     window.removeEventListener("resize", this.onWindowResize, false);
     document.removeEventListener("keydown", this.onKeyDown, false);
     document.removeEventListener("keyup", this.onKeyUp, false);
     this.controls.removeEventListener("lock", this.onLock2, false);
     this.controls.removeEventListener("unlock", this.onUnlock2, false);
-    console.log("destroyed");
   },
 };
 </script>
@@ -409,21 +483,32 @@ export default {
   font-size: 14px;
   line-height: 24px;
 }
-canvas {
-  position: absolute;
-  top: 0%;
-  width: 100%;
-  height: 100%;
-}
+#l {
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+  }
 #botonPlayLab {
-  padding: 10px;
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  cursor: pointer;
-  width: 10%;
-  font-size: 20px;
+    position: fixed;
+    padding: 15px;
+    padding-top: 3px;
+    padding-bottom: 7px;
+    bottom: 16vh;
+    font-family: "quantum";
+    line-height: 34px;
+    text-align: center;
+    letter-spacing: 1.2px;
+    background-color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+    font-size: calc(16px + 0.5vw);
+    z-index: 999;
+    transition: 925ms ease;
 }
+  #botonPlayLab:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(7px);
+  }
 @media (max-width: 960px) {
   #botonPlayLab {
     display: none;

@@ -41,9 +41,13 @@
               style="font-size:calc(12px + 0.1vw);color:white;font-family:Arial;"
               id="opacHover"
             >
-              {{ proyectoSelected.path }}
-            </div>
-          </a>
+              {{ proyectoSelected.path }} </div></a>
+              <a :href="proyectoSelected.path" target="_blank">
+            <div
+              style="font-size:calc(12px + 0.1vw);color:white;font-family:Arial;"
+              id="opacHover"
+            ><span v-if="proyectoSelected.path2"> {{ proyectoSelected.path2 }} </span>
+            </div></a>
           <div
             style="font-size:calc(10px + 0.2vw);color:white;font-family:Arial;"
           >
@@ -248,7 +252,7 @@ export default {
       overlayPreview: false,
       isAlive: true,
       swiperOption: {
-        initialSlide: 5,
+        initialSlide: 6,
         effect: "coverflow",
         grabCursor: true,
         centeredSlides: true,

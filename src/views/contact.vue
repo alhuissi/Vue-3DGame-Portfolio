@@ -143,7 +143,6 @@ export default {
   destroyed() {
     this.renderer.forceContextLoss();
     //document.body.removeChild(this.renderer.domElement);
-    console.log("destroyed");
   },
   methods: {
     init: function() {

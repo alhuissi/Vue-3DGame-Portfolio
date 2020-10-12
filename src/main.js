@@ -9,7 +9,7 @@ import vuescroll from 'vuescroll';
 import i18n from './i18n'
 
 Vue.use(VueSwal)
-Vue.config.productionTip = true
+Vue.config.productionTip = false
 Vue.use(VueMeta);
 Vue.use(vuescroll);
 

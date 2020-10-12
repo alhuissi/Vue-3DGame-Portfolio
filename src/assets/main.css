@@ -92,6 +92,9 @@ a:focus{
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
+.flip-card:hover .flip-card-front {
+  opacity:0;
+}
 
 /* Position the front and back side */
 .flip-card-front, .flip-card-back {
@@ -104,6 +107,7 @@ a:focus{
 
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
+  transition: all 1s ease;
   background-color: transparent;
   color: black;
 }
@@ -115,7 +119,7 @@ a:focus{
   padding-left:10%;
   padding-top:5%;
   font-size:calc(16px + 0.2vw);
-  background-color:rgb(6, 1, 31);
+  background-color:rgb(6, 1, 31)!important;
   color: white;
   transform: rotateY(180deg);
 }

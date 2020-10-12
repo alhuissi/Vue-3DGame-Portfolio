@@ -9,7 +9,118 @@
       <div id="presentacion">
         <!-- Scroll solo en versión para celular -->
         <vue-scroll v-if="this.isMobile" :ops="ops">
-          <v-container fluid>
+          <v-container>
+            <v-row no-gutters>
+              <v-col cols="12" align="center">
+                <div class="happyCustomers" style="color:white;font-family:coolvetica;text-transform:uppercase;">
+                 { {{$t("homeTextClients")}} }
+                </div>
+              </v-col>
+            </v-row>
+            <v-carousel
+                  id="testimonios"
+                  hide-delimiters
+                  touchless
+                  height="400px"
+                  :show-arrows="false"
+                  cycle>
+                  <v-carousel-item
+                    reverse-transition="fade-transition"
+                    transition="fade-transition">
+                      <v-row align="center" justify="center">
+                        <div id="testimonioText">
+                          "{{ $t("testimonio1") }}" <br />
+                          <v-img
+                            :src="require('@/assets/logos/logo-makine.png')"
+                            height="100px"
+                            width="100px"
+                            style="
+                              margin-left: auto;
+                              margin-right: auto;
+                              background-color: rgba(255, 255, 255, 0.9);
+                              border-radius: 50px;
+                              margin-top: 1vh;
+                            "
+                          ></v-img>
+                        </div>
+                      </v-row>
+                  </v-carousel-item>
+                  <v-carousel-item
+                    reverse-transition="fade-transition"
+                    transition="fade-transition">
+                    <v-sheet
+                      style="background-color: rgba(0, 0, 0, 0)"
+                      height="100%"
+                    >
+                      <v-row align="center" justify="center">
+                        <div id="testimonioText">
+                          "{{ $t("testimonio2") }}" <br />
+                          <v-img
+                            :src="require('@/assets/logos/logo-casa.png')"
+                            height="100px"
+                            width="100px"
+                            style="
+                              margin-left: auto;
+                              margin-right: auto;
+                              background-color: rgba(255, 255, 255, 0.9);
+                              border-radius: 50px;
+                              margin-top: 1vh;
+                            "
+                          ></v-img>
+                        </div>
+                      </v-row> </v-sheet
+                  ></v-carousel-item>
+                  <v-carousel-item
+                    reverse-transition="fade-transition"
+                    transition="fade-transition">
+                    <v-sheet
+                      style="background-color: rgba(0, 0, 0, 0)"
+                      height="100%"
+                    >
+                      <v-row align="center" justify="center">
+                        <div id="testimonioText">
+                          "{{ $t("testimonio3") }}" <br />
+                          <v-img
+                            :src="require('@/assets/logos/logo-l-vk.png')"
+                            height="100px"
+                            width="100px"
+                            style="
+                              margin-left: auto;
+                              margin-right: auto;
+                              background-color: rgba(255, 255, 255, 0.9);
+                              border-radius: 50px;
+                              margin-top: 1vh;
+                            "
+                          ></v-img>
+                        </div>
+                      </v-row> </v-sheet
+                  ></v-carousel-item>
+                  <v-carousel-item
+                    reverse-transition="fade-transition"
+                    transition="fade-transition">
+                    <v-sheet
+                      style="background-color: rgba(0, 0, 0, 0)"
+                      height="100%"
+                    >
+                      <v-row align="center" justify="center">
+                        <div id="testimonioText">
+                          "{{ $t("testimonio4") }}" <br />
+                          <v-img
+                            :src="require('@/assets/logos/logo-beatup.png')"
+                            height="100px"
+                            width="100px"
+                            style="
+                              margin-left: auto;
+                              margin-right: auto;
+                              background-color: rgba(255, 255, 255, 0.9);
+                              border-radius: 50px;
+                              margin-top: 1vh;
+                            "
+                          ></v-img>
+                        </div>
+                      </v-row> </v-sheet
+                  ></v-carousel-item>
+            </v-carousel>
             <v-row style="padding-left:2vw;padding-bottom:1vh;">
               <v-col cols="12" md="4" align="center">
                 <v-card class="serviciosCard flip-card">
@@ -99,129 +210,22 @@
                 </v-card>
               </v-col>
             </v-row>
-            <v-row no-gutters>
-              <v-col cols="12" align="center">
-                <div class="happyCustomers" style="color:white;font-family:coolvetica;text-transform:uppercase;">
-                 { {{$t("homeTextClients")}} }
-                </div>
-              </v-col>
-            </v-row>
-            <v-row no-gutters>
-              <v-col cols="12" align="center">
-                <v-carousel
-                  id="testimonios"
-                  hide-delimiters
-                  :show-arrows="false"
-                  cycle>
-                  <v-carousel-item
-                    reverse-transition="fade-transition"
-                    transition="fade-transition"
-                  >
-                    <v-sheet
-                      style="background-color: rgba(0, 0, 0, 0)"
-                      height="100%"
-                    >
-                      <v-row align="center" justify="center">
-                        <div id="testimonioText">
-                          "{{ $t("testimonio1") }}" <br />
-                          <v-img
-                            :src="require('@/assets/logos/logo-makine.png')"
-                            height="100px"
-                            width="100px"
-                            style="
-                              margin-left: auto;
-                              margin-right: auto;
-                              background-color: rgba(255, 255, 255, 0.9);
-                              border-radius: 50px;
-                              margin-top: 1vh;
-                            "
-                          ></v-img>
-                        </div>
-                      </v-row>
-                    </v-sheet>
-                  </v-carousel-item>
-                  <v-carousel-item
-                    reverse-transition="fade-transition"
-                    transition="fade-transition"
-                  >
-                    <v-sheet
-                      style="background-color: rgba(0, 0, 0, 0)"
-                      height="100%"
-                    >
-                      <v-row align="center" justify="center">
-                        <div id="testimonioText">
-                          "{{ $t("testimonio2") }}" <br />
-                          <v-img
-                            :src="require('@/assets/logos/logo-casa.png')"
-                            height="100px"
-                            width="100px"
-                            style="
-                              margin-left: auto;
-                              margin-right: auto;
-                              background-color: rgba(255, 255, 255, 0.9);
-                              border-radius: 50px;
-                              margin-top: 1vh;
-                            "
-                          ></v-img>
-                        </div>
-                      </v-row> </v-sheet
-                  ></v-carousel-item>
-                  <v-carousel-item
-                    reverse-transition="fade-transition"
-                    transition="fade-transition"
-                  >
-                    <v-sheet
-                      style="background-color: rgba(0, 0, 0, 0)"
-                      height="100%"
-                    >
-                      <v-row align="center" justify="center">
-                        <div id="testimonioText">
-                          "{{ $t("testimonio3") }}" <br />
-                          <v-img
-                            :src="require('@/assets/logos/logo-l-vk.png')"
-                            height="100px"
-                            width="100px"
-                            style="
-                              margin-left: auto;
-                              margin-right: auto;
-                              background-color: rgba(255, 255, 255, 0.9);
-                              border-radius: 50px;
-                              margin-top: 1vh;
-                            "
-                          ></v-img>
-                        </div>
-                      </v-row> </v-sheet
-                  ></v-carousel-item>
-                  <v-carousel-item
-                    reverse-transition="fade-transition"
-                    transition="fade-transition"
-                  >
-                    <v-sheet
-                      style="background-color: rgba(0, 0, 0, 0)"
-                      height="100%"
-                    >
-                      <v-row align="center" justify="center">
-                        <div id="testimonioText">
-                          "{{ $t("testimonio4") }}" <br />
-                          <v-img
-                            :src="require('@/assets/logos/logo-beatup.png')"
-                            height="100px"
-                            width="100px"
-                            style="
-                              margin-left: auto;
-                              margin-right: auto;
-                              background-color: rgba(255, 255, 255, 0.9);
-                              border-radius: 50px;
-                              margin-top: 1vh;
-                            "
-                          ></v-img>
-                        </div>
-                      </v-row> </v-sheet
-                  ></v-carousel-item>
-                </v-carousel>
+            <v-row>
+              <v-col cols="12">
+                 <v-card
+                    outlined
+                    router
+                    to="/skills"
+                    color="rgba(0, 0, 0, 0)">
+                      <div class="seeSkills2">
+                        <v-icon color="#0fffff">mdi-arrow-right</v-icon
+                        >{{ $t("home1text") }}
+                      </div>
+                  </v-card>
               </v-col>
             </v-row>
           </v-container>
+         
         </vue-scroll>
 
         <v-container v-if="!this.isMobile" fluid>
@@ -467,8 +471,7 @@
           text-shadow: 0px 0px 0px red;
           text-decoration: underline;
         "
-        >{{ $t("home3instrucciones") }}</span
-      >
+        >{{ $t("home3instrucciones") }}</span>
       <br /><br />
       {{ $t("home3movimiento") }}:
       <div
@@ -478,8 +481,7 @@
           font-size: 25px;
           margin-bottom: 10px;
           margin-top: 5px;
-        "
-      >
+        ">
         WASD
       </div>
       {{ $t("home3correr") }}:
@@ -489,8 +491,7 @@
           font-family: 'coolvetica';
           font-size: 25px;
           margin-bottom: 10px;
-        "
-      >
+        ">
         SHIFT
       </div>
       {{ $t("home3saltar") }}:
@@ -500,21 +501,21 @@
           font-family: 'coolvetica';
           font-size: 25px;
           margin-bottom: 10px;
-        "
-      >
+        ">
         Espacio
       </div>
+      <!--div>
       {{ $t("home3volar") }}
-      <div
-        style="
-          text-shadow: 0px 0px 0px red;
-          font-family: 'coolvetica';
-          font-size: 25px;
-          margin-bottom: 10px;
-        "
-      >
-        F
-      </div>
+        <div
+          style="
+            text-shadow: 0px 0px 0px red;
+            font-family: 'coolvetica';
+            font-size: 25px;
+            margin-bottom: 10px;
+          ">
+          F
+        </div>
+      </div-->
       {{ $t("home3camara") }}:
       <div
         style="
@@ -522,9 +523,18 @@
           font-family: 'coolvetica';
           font-size: 25px;
           margin-bottom: 10px;
-        "
-      >
+        ">
         Mouse
+      </div>
+      {{ $t("home3salir") }}:
+      <div
+        style="
+          text-shadow: 0px 0px 0px red;
+          font-family: 'coolvetica';
+          font-size: 25px;
+          margin-bottom: 10px;
+        ">
+        ESC
       </div>
     </div>
 
@@ -570,6 +580,8 @@ import * as Three from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { PointerLockControls } from "three/examples/jsm/controls/PointerLockControls.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import { Water } from "three/examples/jsm/objects/Water.js";
+import { Sky } from "three/examples/jsm/objects/Sky.js";
 
 export default {
   data() {
@@ -583,6 +595,7 @@ export default {
       model2: null,
       model3: null,
       model4: null,
+      model5: null,
       raycaster: null,
       instructions: null,
       objects: [],
@@ -592,22 +605,26 @@ export default {
       moveRight: false,
       running: false,
       canJump: false,
+      goku: false,
       isMobile: false,
       prevTime: performance.now(),
       velocity: null,
       direction: null,
       blocker: null,
+      water: null,
+      sky: null,
       image_src: require("../assets/logo.png"),
       image_srcAL: require("../assets/AL.jpg"),
+      firstPlay: true,
       ops: {
         vuescroll: {
           mode: "native",
           sizeStrategy: "percent",
           detectResize: true,
         },
-        scrollPanel: {},
+        scrollPanel: {scrollingX: false},
         rail: {},
-        bar: { background: "#4AD1B6" },
+        bar: { background: "#4AD1B6", keepShow: true, onlyShowBarOnScroll: false, },
       },
     };
   },
@@ -628,6 +645,43 @@ export default {
         1000
       );
       this.scene = new Three.Scene();
+      let light = new Three.HemisphereLight(0xffffff, 0x777788, 1);
+      light.position.set(0, 400, 0);
+      this.scene.add(light);
+
+      this.scene.background = new Three.Color(0x000000);
+      this.scene.fog = new Three.Fog(0xffffff, 0, 2500);
+
+      const loader = new GLTFLoader();
+
+      //Pieza
+      loader.load(
+        "/my_workspace/scene.gltf",
+        (gltf5) => {
+          this.scene.add(gltf5.scene);
+          gltf5.scene.scale.set(7, 5, 5); //scale here!
+          gltf5.scene.position.set(-7, -15, 1240); //position here!
+          gltf5.scene.rotateY;
+          this.objects.push(gltf5.scene);
+          this.model5 = gltf5.scene.children[0];
+        },
+        undefined,
+        undefined
+      );
+      //Mini Espacio
+      loader.load(
+        "/need_some_space/scene.gltf",
+        (gltf3) => {
+          this.scene.add(gltf3.scene);
+          gltf3.scene.name = "miniEspacio";
+          gltf3.scene.scale.set(0.05, 0.05, 0.05); //scale here!
+          gltf3.scene.position.set(-6, 8, 1240); //position here!
+          this.objects.push(gltf3.scene);
+          this.model3 = gltf3.scene.children[0];
+        },
+        undefined,
+        undefined
+      );
 
       if (window.innerWidth > 960) {
         this.camera.position.y = 14;
@@ -636,7 +690,7 @@ export default {
         this.scene.add(this.controls.getObject());
       } else {
         this.camera.position.y = 20;
-        this.camera.position.z = 2000;
+        this.camera.position.z = 1500;
         this.controls = new OrbitControls(
           this.camera,
           this.renderer.domElement
@@ -644,13 +698,7 @@ export default {
       }
 
       //this.scene.background = new Three.Color(0x010214);
-      this.scene.background = new Three.Color(0x000000);
-      this.scene.fog = new Three.Fog(0xffffff, 0, 2500);
-
-      let light = new Three.HemisphereLight(0xffffff, 0x777788, 1);
-      light.position.set(0, 400, 0);
-      this.scene.add(light);
-
+      
       let light3 = new Three.PointLight(0x07fff7, 1, 250);
       light3.position.set(0, 10, 1000);
       this.scene.add(light3);
@@ -678,9 +726,9 @@ export default {
 
       for (let i = 0, l = position.count; i < l; i++) {
         vertex.fromBufferAttribute(position, i);
-        vertex.x += Math.random() * 20 - 0;
-        vertex.y += Math.random() * 2;
-        vertex.z += Math.random() * 20 - 0;
+        vertex.x += Math.random() * 20 + 1200;
+        vertex.y += Math.random() * 2 - 10;
+        vertex.z += Math.random() * 20 - 600;
         position.setXYZ(i, vertex.x, vertex.y, vertex.z);
       }
 
@@ -741,9 +789,9 @@ export default {
         );
 
         let box = new Three.Mesh(boxGeometry, boxMaterial);
-        box.position.x = Math.floor(Math.random() * 20 - 10) * 40;
+        box.position.x = Math.floor(Math.random() * 20 - 10) * 40 + 1200;
         box.position.y = Math.floor(Math.random() * 20) * 20 + 20;
-        box.position.z = Math.floor(Math.random() * 20 - 10) * 40;
+        box.position.z = Math.floor(Math.random() * 20 - 10) * 40 - 600;
 
         this.scene.add(box);
         this.objects.push(box);
@@ -753,15 +801,14 @@ export default {
       this.renderer.setSize(window.innerWidth, window.innerHeight);
       this.blocker.appendChild(this.renderer.domElement);
 
-      const loader = new GLTFLoader();
-
       //Goku
       loader.load(
         "/goku/scene.gltf",
         (gltf) => {
           this.scene.add(gltf.scene);
-          gltf.scene.scale.set(25, 25, 25); //scale here!
+          gltf.scene.scale.set(25, 27, 25); //scale here!
           gltf.scene.position.set(0, 2, 0); //position here!
+          gltf.scene.rotation.y = Math.PI;
           this.objects.push(gltf.scene);
           this.model = gltf.scene.children[0];
         },
@@ -784,18 +831,6 @@ export default {
       );
       loader.load(
         "/need_some_space/scene.gltf",
-        (gltf3) => {
-          this.scene.add(gltf3.scene);
-          gltf3.scene.scale.set(0.05, 0.05, 0.05); //scale here!
-          gltf3.scene.position.set(-6, 8, 1240); //position here!
-          this.objects.push(gltf3.scene);
-          this.model2 = gltf3.scene.children[0];
-        },
-        undefined,
-        undefined
-      );
-      loader.load(
-        "/need_some_space/scene.gltf",
         (gltf4) => {
           this.scene.add(gltf4.scene);
           gltf4.scene.scale.set(1, 1, 1); //scale here!
@@ -806,24 +841,51 @@ export default {
         undefined,
         undefined
       );
-      //Pieza
+      //Camino jungla pirata
       loader.load(
-        "/my_workspace/scene.gltf",
-        (gltf) => {
-          this.scene.add(gltf.scene);
-          gltf.scene.scale.set(7, 5, 5); //scale here!
-          gltf.scene.position.set(-7, -15, 1240); //position here!
-          gltf.scene.rotateY;
-          this.objects.push(gltf.scene);
-          this.model3 = gltf.scene.children[0];
+        "/game_pirate_adventure_map/scene.gltf",
+        (gltf6) => {
+          this.scene.add(gltf6.scene);
+          gltf6.scene.scale.set(0.025, 0.025, 0.025); //scale here!
+          gltf6.scene.position.set(0, 0, 1220); //position here!
+          gltf6.scene.rotation.y = Math.PI; //position here!
+          gltf6.scene.rotateY;
+          this.objects.push(gltf6.scene);
+          this.model6 = gltf6.scene.children[0];
         },
         undefined,
         undefined
       );
       this.overlay = false;
+
+      let waterGeometry = new Three.PlaneBufferGeometry(10000, 10000);
+
+      this.water = new Water(waterGeometry, {
+        textureWidth: 512,
+        textureHeight: 512,
+        waterNormals: new Three.TextureLoader().load(
+          "/waternormals.jpg",
+          function (texture) {
+            texture.wrapS = texture.wrapT = Three.RepeatWrapping;
+          }
+        ),
+        alpha: 1.0,
+        sunDirection: light.position.clone().normalize(),
+        sunColor: 0xffffff,
+        waterColor: 0x001e0f,
+        distortionScale: 3.7,
+        fog: this.scene.fog !== undefined,
+      });
+
+      this.water.rotation.x = -Math.PI / 2;
+      this.water.position.y = -12;
     },
     animate: function () {
+      let time = performance.now();
       requestAnimationFrame(this.animate);
+      if(this.water){
+        this.water.material.uniforms["time"].value += 1.0 / 60.0;
+      }
       if (this.model2) {
         this.model2.rotation.z += 0.00002;
       }
@@ -833,12 +895,20 @@ export default {
       if (this.controls.isLocked === true) {
         this.raycaster.ray.origin.copy(this.controls.getObject().position);
         this.raycaster.ray.origin.y -= 14;
-
+        
+        if(this.firstPlay){
+          const parent = this.model3.parent;
+          let MiniEspacio = this.scene.getObjectByName("miniEspacio");
+          this.scene.remove(MiniEspacio);
+          this.scene.add(this.water);
+          //this.velocity.z -= 0.1;
+          this.firstPlay = false;
+        }
+        
         let intersections = this.raycaster.intersectObjects(this.objects);
 
         let onObject = intersections.length > 0;
-
-        let time = performance.now();
+        
         let delta = (time - this.prevTime) / 1000;
 
         this.velocity.x -= this.velocity.x * 10.0 * delta;
@@ -850,6 +920,7 @@ export default {
         this.direction.x = Number(this.moveRight) - Number(this.moveLeft);
         this.direction.normalize(); // this ensures consistent movements in all directions
 
+        //Controles y velocidad
         if (this.moveForward || this.moveBackward) {
           if (this.running) {
             this.velocity.z -= this.direction.z * 1400.0 * delta;
@@ -865,10 +936,16 @@ export default {
           }
         }
 
+        //Colisiones
         if (onObject === true) {
           this.velocity.y = Math.max(0, this.velocity.y);
           this.canJump = true;
         }
+        if (this.controls.getObject().position.z < 10 && this.controls.getObject().position.z > -10 && this.controls.getObject().position.x < 10 && this.controls.getObject().position.x > -10) {
+            //this.velocity.z = 0;
+            //this.controls.getObject().position.z = -20;
+            this.goku = true;
+          } else this.goku = false;
 
         this.controls.moveRight(-this.velocity.x * delta);
         this.controls.moveForward(-this.velocity.z * delta);
@@ -908,34 +985,32 @@ export default {
       document.getElementById("botonPlay").style.opacity = "0";
       document.getElementById("flechaPlay1").style.opacity = "0";
       document.getElementById("testimonios").style.display = "none";
-      document.getElementById("controlesMobile").style.opacity = "1";
-      document.getElementById("controlesMobile").style.display = "block";
+      //document.getElementById("controlesMobile").style.opacity = "1";
+      //document.getElementById("controlesMobile").style.display = "block";
       //document.getElementById("esc").style.opacity = "1";
       //document.getElementById("esc").style.display = "block";
       //document.getElementById("flechaPlay2").style.opacity = "0";
       setTimeout(() => {
-        this.instructions.style.opacity = 0;
-      }, 7000);
-      setTimeout(() => {
         document.getElementById("testimonios").style.opacity = "0";
       }, 500);
+      setTimeout(() => {
+        this.instructions.style.opacity = 0;
+      }, 7000);
     },
     onUnlock: function () {
       this.blocker.style.display = "block";
       document.getElementById("presentacion").style.opacity = "1";
       document.getElementById("botonPlay").style.opacity = "1";
       document.getElementById("flechaPlay1").style.opacity = "1";
-      document.getElementById("controlesMobile").style.opacity = "0";
-      document.getElementById("controlesMobile").style.display = "none";
+      document.getElementById("testimonios").style.opacity = "1";
+      //document.getElementById("controlesMobile").style.opacity = "0";
+      //document.getElementById("controlesMobile").style.display = "none";
       document.getElementById("testimonios").style.display = "block";
       //document.getElementById("esc").style.opacity = "0";
       //document.getElementById("esc").style.display = "none";
       //document.getElementById("flechaPlay2").style.opacity = "1";
       this.instructions.style.display = "none";
       this.instructions.style.opacity = 0;
-      setTimeout(() => {
-        document.getElementById("testimonios").style.opacity = "1";
-      }, 500);
     },
     mobileControlUp() {
       this.moveForward = true;
@@ -954,6 +1029,7 @@ export default {
     },
     onKeyDown: function (event) {
       switch (event.keyCode) {
+        
         case 38: // up
         case 87: // w
           this.moveForward = true;
@@ -985,6 +1061,12 @@ export default {
 
         case 70: // F
           if (this.velocity.y <= 200) this.velocity.y += 50;
+          break;
+
+        case 17: // ctrl
+          if(this.goku = true){
+            console.log('estoy con goku')
+          }
           break;
       }
     },
@@ -1049,6 +1131,7 @@ export default {
     document.addEventListener("keyup", this.onKeyUp, false);
     this.controls.addEventListener("lock", this.onLock, false);
     this.controls.addEventListener("unlock", this.onUnlock, false);
+    document.getElementById("botonPlay").style.zIndex = "9999";
     if(window.innerWidth < 960){
       console.log("phone");
       this.isMobile = true;
@@ -1062,7 +1145,6 @@ export default {
     document.removeEventListener("keyup", this.onKeyUp, false);
     this.controls.removeEventListener("lock", this.onLock, false);
     this.controls.removeEventListener("unlock", this.onUnlock, false);
-    console.log("destroyed");
   },
 };
 </script>
@@ -1099,6 +1181,20 @@ export default {
   width: 95%;
   text-align: center;
 }
+.seeSkills2 {
+  position:relative;
+  font-size: 16px;
+  color: white;
+  font-family: coolvetica;
+  transition: 325ms ease;
+  margin-left: 10vw;
+  margin-top:10vh;
+  bottom:10vh;
+}
+.seeSkills2:hover {
+  opacity: 0.5;
+  font-size: 15px;
+}
 @media (min-width: 960px) {
   .serviciosCard {
     background-color: rgb(6, 1, 31) !important;
@@ -1129,6 +1225,10 @@ export default {
     transition: 925ms;
     z-index: 19;
   }
+  .happyCustomers{
+    padding-top:1vh;
+    padding-bottom:1vh;
+  }
   #c {
     position: absolute;
     top: 0%;
@@ -1148,7 +1248,7 @@ export default {
     background-color: rgba(255, 255, 255, 1);
     cursor: pointer;
     font-size: calc(16px + 0.5vw);
-    z-index: 99;
+    z-index: 999;
     transition: 925ms ease;
   }
   #botonPlay:hover {
@@ -1320,6 +1420,9 @@ export default {
     letter-spacing: 0.3px;
     text-shadow: 1px 1px 10px rgba(0, 0, 0, 1);
   }
+  .happyCustomers{
+    font-size:calc(10px + 0.5vw);
+  }
   @media (min-height: 900px) {
     #presentacion {
       margin-top: 10vh;
@@ -1366,6 +1469,7 @@ export default {
   #testimonios {
     margin-top:10vh;
     margin-left:2vw;
+    height:100%;
   }
   #testimonioText {
     width: 90vw;
@@ -1472,7 +1576,7 @@ export default {
     text-justify: center !important;
     display: block;
     padding-bottom: 3vh;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 20, 70, 0.3);
     transition: 725ms ease;
     animation: cycle 10s linear infinite;
     animation-direction: alternate-reverse;
@@ -1515,9 +1619,9 @@ export default {
     font-size: 12px;
   }
   .happyCustomers{
-    padding-right:5vw;
-    margin-top:10vh;
-    font-size:calc(10px + 2vw);
+    padding-right:0vw;
+    margin-top:2vh;
+    font-size:calc(14px + 2vw);
   }
 }
 </style>

@@ -19,6 +19,20 @@
       "techUsed": "Wordpress, CSS",
       "resumen": ""
     },
+    "Balamboo": {
+      "title": "Balamboo",
+      "id": "balamboo",
+      "ano": "2013",
+      "tipo": "Website",
+      "description": "Agencia digital",
+      "path": "https://balamboo.cl",
+      "posted": "2018.11.18",
+      "update": "",
+      "color": "white",
+      "categories": "Website, servicios, formulario",
+      "techUsed": "Wordpress, CSS",
+      "resumen": ""
+    },
     "Makine": {
       "title": "Makiné",
       "id": "makine",
@@ -78,15 +92,30 @@
     "mrclick": {
       "title": "Mr Click",
       "id": "mrclick",
-      "ano": "2020",
+      "ano": "2019",
       "tipo": "Ecommerce",
       "description": "Ecommerce de tecnología",
       "path": "https://mrclick.cl",
+      "path2": "https://mrclick.com.pe",
       "posted": "2019.11.18",
       "update": "",
       "color": "white",
       "categories": "E-commerce, technology",
-      "techUsed": "Shopify, Liquid, HTML, PHP",
+      "techUsed": "Shopify, Liquid, PHP",
+      "resumen": ""
+    },
+    "beatup": {
+      "title": "Beatup",
+      "id": "beatup",
+      "ano": "2020",
+      "tipo": "Web App (beta)",
+      "description": "Marketplace de productos digitales (música)",
+      "path": "https://beatup.cl",
+      "posted": "2019.11.18",
+      "update": "",
+      "color": "white",
+      "categories": "E-commerce, marketplace, music",
+      "techUsed": "Vue, Firebase, PHP",
       "resumen": ""
     },
     "Oficina Global": {
@@ -129,20 +158,6 @@
       "color": "white",
       "categories": "E-commerce, organic",
       "techUsed": "Wordpress, WooCommerce, Javascript, PHP",
-      "resumen": ""
-    },
-    "beatup": {
-      "title": "Beatup",
-      "id": "beatup",
-      "ano": "2020",
-      "tipo": "Web App (beta)",
-      "description": "Marketplace de productos digitales (música)",
-      "path": "https://beatup.cl",
-      "posted": "2019.11.18",
-      "update": "",
-      "color": "white",
-      "categories": "E-commerce, marketplace, music",
-      "techUsed": "Vue, Firebase, PHP",
       "resumen": ""
     },
     "IDEa": {

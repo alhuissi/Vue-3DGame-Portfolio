@@ -212,11 +212,11 @@
     <app-header ref="headerRef" style="z-index:5;"></app-header>
 
     <!-- Content-->
-    <v-content>
+    <v-main>
       <transition name="fade" mode="out-in">
         <router-view ref="routerViewRef" class="mui-container" />
       </transition>
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 
@@ -634,7 +634,7 @@ export default {
     position: fixed;
     bottom: 5vh;
     right: 5vw;
-    z-index: 99;
+    z-index: 199;
     transition: all 725ms ease;
   }
 }
@@ -754,7 +754,7 @@ export default {
     position: fixed;
     top: 2vh;
     left: 5vw;
-    z-index: 99;
+    z-index: 19;
     transition: all 725ms ease;
   }
 }

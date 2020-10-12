@@ -1,4 +1,6 @@
-# neosyd
+# The Deval - Web Development
+
+My personal website and portfolio
 
 ## Project setup
 ```
@@ -14,6 +16,14 @@ npm run serve
 ```
 npm run build
 ```
+
+### Deployment
+Use your own Firebase configuration, then deploy with:
+```
+firebase deploy
+```
+See [Firebase Reference](https://firebase.google.com/docs/hosting).
+
 
 ### Lints and fixes files
 ```

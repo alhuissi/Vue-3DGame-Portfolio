@@ -97,8 +97,7 @@
                 outlined
                 router
                 to="/portafolios"
-                color="rgba(0, 0, 0, 0)"
-              >
+                color="rgba(0, 0, 0, 0)">
                 <div class="seeSkills">
                   <v-icon color="#0fffff">mdi-arrow-right</v-icon
                   >{{ $t("home2text") }}
@@ -135,7 +134,7 @@ export default {
       blocker: null,
       tecnologias: [
         { nombre: "Java", icon: "mdi-language-java" },
-        { nombre: "C++", icon: "mdi-language-cpp" },
+        /*{ nombre: "C++", icon: "mdi-language-cpp" },*/
         { nombre: "PHP", icon: "mdi-language-php" },
         { nombre: "Javascript", icon: "mdi-language-javascript" },
         { nombre: "Python", icon: "mdi-language-python" },
@@ -159,11 +158,22 @@ export default {
         vuescroll: {
           mode: "native",
           sizeStrategy: "percent",
+          wheelScrollDuration: 300,
           detectResize: true,
         },
-        scrollPanel: {},
+        scrollPanel: {
+          scrollingX: false,
+          speed: 300,
+        },
         rail: {},
-        bar: { background: "#4AD1B6" },
+        bar: { background: "#4AD1B6",keepShow: true, onlyShowBarOnScroll: false, },
+        scrollButton: {
+        enable: true,
+        background: 'rgb(3, 185, 118)',
+        opacity: 1,
+        step: 180,
+        mousedownStep: 30
+      }
       },
     };
   },
@@ -268,7 +278,6 @@ export default {
   destroyed() {
     this.renderer.forceContextLoss();
     //document.body.removeChild(this.renderer.domElement);
-    console.log("destroyed");
   },
   watch: {
     overlay() {},
@@ -308,12 +317,11 @@ export default {
     text-justify: center !important;
     padding-bottom: 1vh;
     background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 15px;
     transition: 325ms ease;
     opacity: 0.95;
     z-index: 99;
     border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 5px;
+    border-radius: 25px;
     animation: cycle 10s infinite;
   }
   #containerSkills:hover {

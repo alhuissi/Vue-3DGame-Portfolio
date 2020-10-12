@@ -1,13 +1,17 @@
 <template>
   <section>
-    <div id="container2"></div>
+    <canvas id="e"></canvas>
+    <div id="container2">
+      
+    </div>
+    
   </section>
 </template>
 
 <script>
 import * as Three from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { PointerLockControls } from 'three/examples/jsm/controls/PointerLockControls.js';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 export default {
   data() {
@@ -40,36 +44,38 @@ export default {
   methods: {
     init: function() {
       let container = document.getElementById("container2");
+      const canvas = document.querySelector("#e");
+      this.renderer = new Three.WebGLRenderer({ canvas, antialias: true });
+      this.renderer.setSize(window.innerWidth, window.innerHeight);
+      container.appendChild(this.renderer.domElement);
 
       this.camera = new Three.PerspectiveCamera(
-        70,
-        container.clientWidth / container.clientHeight,
-        0.01,
-        10
+        75,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
       );
-      this.camera.position.z = 1;
+      this.camera.position.z = 25;
+      this.camera.position.y = 20;
 
       this.scene = new Three.Scene();
-      this.scene.background = new Three.Color(0xffffff);
-      this.scene.fog = new Three.Fog(0xffffff, 0, 750);
 
-      let light = new Three.HemisphereLight(0xeeeeff, 0x777788, 0.75);
-      light.position.set(0.5, 1, 0.75);
+      let light = new Three.PointLight(0xffffff, 2, 300);
+      light.position.set(1, 150, 100);
       this.scene.add(light);
 
-      this.controls = new PointerLockControls(this.camera, document.body);
+      this.scene.background = new Three.Color(0x000000);
+      this.scene.fog = new Three.Fog(0xffffff, 0, 2500);
 
-      this.renderer = new Three.WebGLRenderer({ antialias: true });
-      this.renderer.setSize(container.clientWidth, container.clientHeight);
-      container.appendChild(this.renderer.domElement);
+      this.controls = new OrbitControls(this.camera, this.renderer.domElement);
 
       const loader = new GLTFLoader();
 
       //Goku
       loader.load("/goku/scene.gltf", gltf => {
           this.scene.add(gltf.scene)
-          //gltf.scene.scale.set(30,30,30) //scale here!
-          gltf.scene.position.set(0,-0.2,0); //position here!
+          gltf.scene.scale.set(30,30,30) //scale here!
+          gltf.scene.position.set(0,-5,0); //position here!
           this.objects.push(gltf.scene);
           this.model = gltf.scene.children[0];
         },
@@ -84,9 +90,9 @@ export default {
       this.renderer.render(this.scene, this.camera);
     },
     onWindowResize: function() {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
+      this.camera.aspect = window.innerWidth / window.innerHeight;
+      this.camera.updateProjectionMatrix();
+      this.renderer.setSize(window.innerWidth, window.innerHeight);
     }
   },
   mounted() {
@@ -99,7 +105,19 @@ export default {
 
 <style>
 #container2{
-    height: 100vh;
-    width: 100vw;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    height: 100%;
+    transition: 925ms;
+    background-color:rgba(0,0,0,0);
 }
+#e {
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+  }
 </style>
