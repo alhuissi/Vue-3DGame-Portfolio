@@ -157,7 +157,7 @@
       "update": "",
       "color": "white",
       "categories": "E-commerce, organic",
-      "techUsed": "Wordpress, WooCommerce, Javascript, PHP",
+      "techUsed": "Wordpress, WooCommerce, Javascript",
       "resumen": ""
     },
     "IDEa": {
@@ -166,7 +166,7 @@
       "ano": "2019",
       "tipo": "Website",
       "description": "Compañia de Danza",
-      "path": "https://companiaidea.yendo.cl",
+      "path": "https://companiaidea.cl",
       "posted": "2019.11.18",
       "update": "",
       "color": "white",
@@ -199,7 +199,7 @@
       "update": "",
       "color": "white",
       "categories": "Blog, music",
-      "techUsed": "Wordpress, WooCommerce, Javascript, PHP, CSS",
+      "techUsed": "Wordpress, WooCommerce, Javascript, CSS",
       "resumen": ""
     }
   },
