@@ -18,121 +18,134 @@
                     color: white;
                     font-family: coolvetica;
                     text-transform: uppercase;
+                    font-size:14px;
                   "
                 >
                   { {{ $t("homeTextClients") }} }
                 </div>
               </v-col>
             </v-row>
-            <v-carousel
-              id="testimonios"
-              hide-delimiters
-              touchless
-              height="400px"
-              :show-arrows="false"
-              cycle
-            >
-              <v-carousel-item
-                reverse-transition="fade-transition"
-                transition="fade-transition"
-              >
-                <v-row align="center" justify="center">
-                  <div id="testimonioText">
-                    "{{ $t("testimonio1") }}" <br />
-                    <v-img
-                      :src="require('@/assets/logos/logo-makine.png')"
-                      height="10px"
-                      width="10px"
-                      style="
-                        margin-left: auto;
-                        margin-right: auto;
-                        background-color: rgba(255, 255, 255, 0.9);
-                        border-radius: 50px;
-                        margin-top: 1vh;
-                      "
-                    ></v-img>
-                  </div>
-                </v-row>
-              </v-carousel-item>
-              <v-carousel-item
-                reverse-transition="fade-transition"
-                transition="fade-transition"
-              >
-                <v-sheet
-                  style="background-color: rgba(0, 0, 0, 0)"
-                  height="100%"
+            <v-row style="z-index: 9999 !important">
+              <v-col cols="12">
+                <v-carousel
+                  id="testimonios"
+                  hide-delimiters
+                  touchless
+                  height="400px"
+                  :show-arrows="false"
+                  cycle
                 >
-                  <v-row align="center" justify="center">
-                    <div id="testimonioText">
-                      "{{ $t("testimonio2") }}" <br />
-                      <v-img
-                        :src="require('@/assets/logos/logo-casa.png')"
-                        height="10px"
-                        width="10px"
-                        style="
-                          margin-left: auto;
-                          margin-right: auto;
-                          background-color: rgba(255, 255, 255, 0.9);
-                          border-radius: 50px;
-                          margin-top: 1vh;
-                        "
-                      ></v-img>
-                    </div>
-                  </v-row> </v-sheet
-              ></v-carousel-item>
-              <v-carousel-item
-                reverse-transition="fade-transition"
-                transition="fade-transition"
-              >
-                <v-sheet
-                  style="background-color: rgba(0, 0, 0, 0)"
-                  height="100%"
-                >
-                  <v-row align="center" justify="center">
-                    <div id="testimonioText">
-                      "{{ $t("testimonio3") }}" <br />
-                      <v-img
-                        :src="require('@/assets/logos/logo-l-vk.png')"
-                        height="10px"
-                        width="10px"
-                        style="
-                          margin-left: auto;
-                          margin-right: auto;
-                          background-color: rgba(255, 255, 255, 0.9);
-                          border-radius: 50px;
-                          margin-top: 1vh;
-                        "
-                      ></v-img>
-                    </div>
-                  </v-row> </v-sheet
-              ></v-carousel-item>
-              <v-carousel-item
-                reverse-transition="fade-transition"
-                transition="fade-transition"
-              >
-                <v-sheet
-                  style="background-color: rgba(0, 0, 0, 0)"
-                  height="100%"
-                >
-                  <v-row align="center" justify="center">
-                    <div id="testimonioText">
-                      "{{ $t("testimonio4") }}" <br />
-                      <v-img
-                        :src="require('@/assets/logos/logo-beatup.png')"
-                        height="10px"
-                        width="10px"
-                        style="
-                          margin-left: auto;
-                          margin-right: auto;
-                          background-color: rgba(255, 255, 255, 0.9);
-                          border-radius: 50px;
-                          margin-top: 1vh;
-                        "
-                      ></v-img>
-                    </div>
-                  </v-row> </v-sheet
-              ></v-carousel-item>
-            </v-carousel>
+                  <v-carousel-item
+                    reverse-transition="fade-transition"
+                    transition="fade-transition"
+                  >
+                    <v-row align="center" justify="center">
+                      <v-col cols="12">
+                        <div id="testimonioText">
+                          "{{ $t("testimonio1") }}" <br />
+                          <v-img
+                            :src="require('@/assets/logos/logo-makine.png')"
+                            height="50px"
+                            width="50px"
+                            style="
+                              margin-left: auto;
+                              margin-right: auto;
+                              background-color: rgba(255, 255, 255, 0.9);
+                              border-radius: 50px;
+                              margin-top: 1vh;
+                            "
+                          ></v-img>
+                        </div>
+                      </v-col>
+                    </v-row>
+                  </v-carousel-item>
+                  <v-carousel-item
+                    reverse-transition="fade-transition"
+                    transition="fade-transition"
+                  >
+                    <v-sheet
+                      style="background-color: rgba(0, 0, 0, 0)"
+                      height="100%"
+                    >
+                      <v-row align="center" justify="center">
+                        <v-col cols="12">
+                          <div id="testimonioText">
+                            "{{ $t("testimonio2") }}" <br />
+                            <v-img
+                              :src="require('@/assets/logos/logo-casa.png')"
+                              height="50px"
+                              width="50px"
+                              style="
+                                margin-left: auto;
+                                margin-right: auto;
+                                background-color: rgba(255, 255, 255, 0.9);
+                                border-radius: 50px;
+                                margin-top: 1vh;
+                              "
+                            ></v-img>
+                          </div>
+                        </v-col>
+                      </v-row> </v-sheet
+                  ></v-carousel-item>
+                  <v-carousel-item
+                    reverse-transition="fade-transition"
+                    transition="fade-transition"
+                  >
+                    <v-sheet
+                      style="background-color: rgba(0, 0, 0, 0)"
+                      height="100%"
+                    >
+                      <v-row align="center" justify="center">
+                        <v-col cols="12">
+                          <div id="testimonioText">
+                            "{{ $t("testimonio3") }}" <br />
+                            <v-img
+                              :src="require('@/assets/logos/logo-l-vk.png')"
+                              height="50px"
+                              width="50px"
+                              style="
+                                margin-left: auto;
+                                margin-right: auto;
+                                background-color: rgba(255, 255, 255, 0.9);
+                                border-radius: 50px;
+                                margin-top: 1vh;
+                              "
+                            ></v-img>
+                          </div>
+                        </v-col>
+                      </v-row> </v-sheet
+                  ></v-carousel-item>
+                  <v-carousel-item
+                    reverse-transition="fade-transition"
+                    transition="fade-transition"
+                  >
+                    <v-sheet
+                      style="background-color: rgba(0, 0, 0, 0)"
+                      height="100%"
+                    >
+                      <v-row align="center" justify="center">
+                        <v-col cols="12">
+                          <div id="testimonioText">
+                            "{{ $t("testimonio4") }}" <br />
+                            <v-img
+                              :src="require('@/assets/logos/logo-beatup.png')"
+                              height="50px"
+                              width="50px"
+                              style="
+                                margin-left: auto;
+                                margin-right: auto;
+                                background-color: rgba(255, 255, 255, 0.9);
+                                border-radius: 50px;
+                                margin-top: 1vh;
+                              "
+                            ></v-img>
+                          </div>
+                        </v-col>
+                      </v-row> </v-sheet
+                  ></v-carousel-item>
+                </v-carousel>
+              </v-col>
+            </v-row>
             <v-row style="padding-left: 2vw; padding-bottom: 1vh">
               <v-col cols="12" md="4" align="center">
                 <v-card class="serviciosCard flip-card">
@@ -283,6 +296,7 @@
           </v-container>
         </vue-scroll>
 
+        <!-- Versión Desktop -->
         <v-container v-if="!this.isMobile" fluid>
           <v-row style="padding-left: 2vw; padding-bottom: 1vh">
             <v-col cols="12" md="4" align="center">
@@ -451,22 +465,24 @@
                     style="background-color: rgba(0, 0, 0, 0)"
                     height="100%"
                   >
-                    <v-row align="center" justify="center">
-                      <div id="testimonioText">
-                        "{{ $t("testimonio1") }}" <br />
-                        <v-img
-                          :src="require('@/assets/logos/logo-makine.png')"
-                          height="100px"
-                          width="100px"
-                          style="
-                            margin-left: auto;
-                            margin-right: auto;
-                            background-color: rgba(255, 255, 255, 0.9);
-                            border-radius: 50px;
-                            margin-top: 1vh;
-                          "
-                        ></v-img>
-                      </div>
+                    <v-row no-gutters align="center" justify="center">
+                      <v-col cols="12">
+                        <div id="testimonioText">
+                          "{{ $t("testimonio1") }}" <br />
+                          <v-img
+                            :src="require('@/assets/logos/logo-makine.png')"
+                            height="100px"
+                            width="100px"
+                            style="
+                              margin-left: auto;
+                              margin-right: auto;
+                              background-color: rgba(255, 255, 255, 0.9);
+                              border-radius: 50px;
+                              margin-top: 1vh;
+                            "
+                          ></v-img>
+                        </div>
+                      </v-col>
                     </v-row>
                   </v-sheet>
                 </v-carousel-item>
@@ -478,22 +494,24 @@
                     style="background-color: rgba(0, 0, 0, 0)"
                     height="100%"
                   >
-                    <v-row align="center" justify="center">
-                      <div id="testimonioText">
-                        "{{ $t("testimonio2") }}" <br />
-                        <v-img
-                          :src="require('@/assets/logos/logo-casa.png')"
-                          height="100px"
-                          width="100px"
-                          style="
-                            margin-left: auto;
-                            margin-right: auto;
-                            background-color: rgba(255, 255, 255, 0.9);
-                            border-radius: 50px;
-                            margin-top: 1vh;
-                          "
-                        ></v-img>
-                      </div>
+                    <v-row no-gutters align="center" justify="center">
+                      <v-col cols="12">
+                        <div id="testimonioText">
+                          "{{ $t("testimonio2") }}" <br />
+                          <v-img
+                            :src="require('@/assets/logos/logo-casa.png')"
+                            height="100px"
+                            width="100px"
+                            style="
+                              margin-left: auto;
+                              margin-right: auto;
+                              background-color: rgba(255, 255, 255, 0.9);
+                              border-radius: 50px;
+                              margin-top: 1vh;
+                            "
+                          ></v-img>
+                        </div>
+                      </v-col>
                     </v-row> </v-sheet
                 ></v-carousel-item>
                 <v-carousel-item
@@ -504,22 +522,24 @@
                     style="background-color: rgba(0, 0, 0, 0)"
                     height="100%"
                   >
-                    <v-row align="center" justify="center">
-                      <div id="testimonioText">
-                        "{{ $t("testimonio3") }}" <br />
-                        <v-img
-                          :src="require('@/assets/logos/logo-l-vk.png')"
-                          height="100px"
-                          width="100px"
-                          style="
-                            margin-left: auto;
-                            margin-right: auto;
-                            background-color: rgba(255, 255, 255, 0.9);
-                            border-radius: 50px;
-                            margin-top: 1vh;
-                          "
-                        ></v-img>
-                      </div>
+                    <v-row no-gutters align="center" justify="center">
+                      <v-col cols="12">
+                        <div id="testimonioText">
+                          "{{ $t("testimonio3") }}" <br />
+                          <v-img
+                            :src="require('@/assets/logos/logo-l-vk.png')"
+                            height="100px"
+                            width="100px"
+                            style="
+                              margin-left: auto;
+                              margin-right: auto;
+                              background-color: rgba(255, 255, 255, 0.9);
+                              border-radius: 50px;
+                              margin-top: 1vh;
+                            "
+                          ></v-img>
+                        </div>
+                      </v-col>
                     </v-row> </v-sheet
                 ></v-carousel-item>
                 <v-carousel-item
@@ -530,22 +550,24 @@
                     style="background-color: rgba(0, 0, 0, 0)"
                     height="100%"
                   >
-                    <v-row align="center" justify="center">
-                      <div id="testimonioText">
-                        "{{ $t("testimonio4") }}" <br />
-                        <v-img
-                          :src="require('@/assets/logos/logo-beatup.png')"
-                          height="100px"
-                          width="100px"
-                          style="
-                            margin-left: auto;
-                            margin-right: auto;
-                            background-color: rgba(255, 255, 255, 0.9);
-                            border-radius: 50px;
-                            margin-top: 1vh;
-                          "
-                        ></v-img>
-                      </div>
+                    <v-row no-gutters align="center" justify="center">
+                      <v-col cols="12">
+                        <div id="testimonioText">
+                          "{{ $t("testimonio4") }}" <br />
+                          <v-img
+                            :src="require('@/assets/logos/logo-beatup.png')"
+                            height="100px"
+                            width="100px"
+                            style="
+                              margin-left: auto;
+                              margin-right: auto;
+                              background-color: rgba(255, 255, 255, 0.9);
+                              border-radius: 50px;
+                              margin-top: 1vh;
+                            "
+                          ></v-img>
+                        </div>
+                      </v-col>
                     </v-row> </v-sheet
                 ></v-carousel-item>
               </v-carousel>
@@ -816,7 +838,7 @@ export default {
         this.scene.add(this.controls.getObject());
       } else {
         this.camera.position.y = 20;
-        this.camera.position.z = 1500;
+        this.camera.position.z = 1360;
         this.controls = new OrbitControls(
           this.camera,
           this.renderer.domElement
@@ -1013,7 +1035,7 @@ export default {
         this.water.material.uniforms["time"].value += 1.0 / 60.0;
       }
       if (this.model2) {
-        this.model2.rotation.z += 0.00002;
+        this.model2.rotation.z += 0.00005;
       }
       if (this.model4) {
         this.model4.rotation.z += 0.0002;
@@ -1113,7 +1135,7 @@ export default {
     hablar() {
       this.$swal({
         title: this.$t("goku"),
-        text: this.$t('goku2'),
+        text: this.$t("goku2"),
         confirmButtonText: this.$t("goku3"),
       }).then((result) => {
         if (result.isConfirmed) {
@@ -1330,8 +1352,8 @@ export default {
   font-size: calc(10px + 0.5vw) !important;
   color: white !important;
 }
-.swal2-confirm{
-  color:black!important;
+.swal2-confirm {
+  color: black !important;
   font-family: coolvetica;
 }
 .swal2-popup {
@@ -1341,18 +1363,18 @@ export default {
   transition: all 725ms ease;
   box-shadow: 2px 2px 100px rgba(199, 180, 11, 0.1);
 }
-@media (min-width: 960px){
-  .swal2-popup{
-    width:40vw!important;
+@media (min-width: 960px) {
+  .swal2-popup {
+    width: 40vw !important;
   }
 }
-@media (max-width: 960px){
-  .swal2-popup{
-    width:90vw!important;
+@media (max-width: 960px) {
+  .swal2-popup {
+    width: 90vw !important;
   }
 }
-.swal2-popup:hover{
-  background-color:rgba(10,10,10,1)!important;
+.swal2-popup:hover {
+  background-color: rgba(10, 10, 10, 1) !important;
   /*box-shadow: 2px 2px 100px rgba(199, 180, 11, 0.2);*/
 }
 #blocker {
@@ -1374,7 +1396,7 @@ export default {
 }
 #testimonioText {
   color: rgb(218, 231, 238);
-  z-index: 2;
+  z-index: 99;
   width: 95%;
   text-align: center;
 }
