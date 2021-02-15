@@ -18,7 +18,7 @@
                     color: white;
                     font-family: coolvetica;
                     text-transform: uppercase;
-                    font-size:14px;
+                    font-size: 14px;
                   "
                 >
                   { {{ $t("homeTextClients") }} }
@@ -581,9 +581,11 @@
           <v-icon x-large color="#ffffff" class="neon">mdi-arrow-right</v-icon>
         </div>
         <v-row justify="center">
-          <v-card-title id="botonPlay" @click="onClickInstructions()">{{
-            $t("playButton")
-          }}</v-card-title>
+          <v-col cols="12" align="center">
+            <v-card-title id="botonPlay" @click="onClickInstructions()">{{
+              $t("playButton")
+            }}</v-card-title>
+          </v-col>
         </v-row>
       </v-card>
     </div>
@@ -726,6 +728,7 @@ import { PointerLockControls } from "three/examples/jsm/controls/PointerLockCont
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { Water } from "three/examples/jsm/objects/Water.js";
 import { Sky } from "three/examples/jsm/objects/Sky.js";
+import 'sweetalert2/dist/sweetalert2.min.css';
 
 export default {
   data() {
@@ -1133,6 +1136,7 @@ export default {
       this.controls.lock();
     },
     hablar() {
+      console.log('hablando');
       this.$swal({
         title: this.$t("goku"),
         text: this.$t("goku2"),
@@ -1334,6 +1338,7 @@ export default {
 </script>
 
 <style>
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;
@@ -1361,6 +1366,7 @@ export default {
   border-radius: 10px !important;
   width: 40vw !important;
   transition: all 725ms ease;
+  z-index:999;
   box-shadow: 2px 2px 100px rgba(199, 180, 11, 0.1);
 }
 @media (min-width: 960px) {
@@ -1372,6 +1378,9 @@ export default {
   .swal2-popup {
     width: 90vw !important;
   }
+}
+.swal2-container{
+
 }
 .swal2-popup:hover {
   background-color: rgba(10, 10, 10, 1) !important;
@@ -1391,6 +1400,7 @@ export default {
   top: 1vh !important;
   margin-top: 0vh;
   padding-top: 0vh;
+  padding-left:2vw;
   width: 100%;
   overflow: visible;
 }
@@ -1442,7 +1452,7 @@ export default {
     line-height: 34px;
     opacity: 0;
     transition: 925ms;
-    z-index: 19;
+    z-index: 9999;
   }
   #instructions {
     position: fixed;
@@ -1477,6 +1487,8 @@ export default {
     padding: 15px;
     padding-top: 3px;
     padding-bottom: 7px;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: 16vh;
     font-family: "quantum";
     line-height: 34px;
@@ -1490,13 +1502,13 @@ export default {
   }
   #botonPlay:hover {
     background-color: rgba(255, 255, 255, 0.9);
-    transform: translateY(7px);
+    font-size: calc(14px + 0.5vw);
   }
   #flechaPlay1 {
     position: fixed;
     z-index: 9;
     bottom: 16.5vh;
-    left: 40vw;
+    left: 41vw;
     animation: play1 500ms linear infinite;
     animation-direction: alternate-reverse;
   }
@@ -1659,6 +1671,7 @@ export default {
   }
   .happyCustomers {
     font-size: calc(10px + 0.5vw);
+    padding-left:2vw;
   }
   @media (min-height: 900px) {
     #presentacion {

@@ -5,64 +5,62 @@
         <div class="fondo-color" id="colorHeader">
           <div class="line"></div>
           <nav class="nav1" :style="x">
-            <v-row class="box">
-              <v-row class="box2" v-bind:style="{ borderColor: bgColor }">
-                <v-col cols="3" xs="3" class="menuItem">
-                  <router-link to="/home">
-                    <div @click="cambiarColor1()">
-                      <p
-                        v-bind:style="{ color: colorFont }"
-                        v-bind:class="[{ neon: isActiveInicio }]"
-                        class="neonRojo"
-                      >
-                        {{ $t("menuInicio") }}
-                      </p>
-                    </div>
-                  </router-link>
-                </v-col>
+            <v-row class="box2" v-bind:style="{ borderColor: bgColor }">
+              <v-col cols="3" xs="3" class="menuItem">
+                <router-link to="/home">
+                  <div @click="cambiarColor1()">
+                    <p
+                      v-bind:style="{ color: colorFont }"
+                      v-bind:class="[{ neon: isActiveInicio }]"
+                      class="neonRojo"
+                    >
+                      {{ $t("menuInicio") }}
+                    </p>
+                  </div>
+                </router-link>
+              </v-col>
 
-                <v-col cols="3" xs="3" class="menuItem">
-                  <router-link to="/skills">
-                    <div @click="cambiarColor4()">
-                      <p
-                        v-bind:style="{ color: colorFont }"
-                        v-bind:class="[{ neon: isActiveSkills }]"
-                        class="neonRojo"
-                      >
-                        {{ $t("menuHabilidades") }}
-                      </p>
-                    </div>
-                  </router-link>
-                </v-col>
+              <v-col cols="3" xs="3" class="menuItem">
+                <router-link to="/skills">
+                  <div @click="cambiarColor4()">
+                    <p
+                      v-bind:style="{ color: colorFont }"
+                      v-bind:class="[{ neon: isActiveSkills }]"
+                      class="neonRojo"
+                    >
+                      {{ $t("menuHabilidades") }}
+                    </p>
+                  </div>
+                </router-link>
+              </v-col>
 
-                <v-col cols="3" xs="3" class="menuItem">
-                  <router-link to="/portafolios">
-                    <div @click="cambiarColor3()">
-                      <p
-                        v-bind:style="{ color: colorFont }"
-                        v-bind:class="[{ neon: isActivePortafolios }]"
-                        class="neonRojo"
-                      >
-                        {{ $t("menuProyectos") }}
-                      </p>
-                    </div>
-                  </router-link>
-                </v-col>
+              <v-col cols="3" xs="3" class="menuItem">
+                <router-link to="/portafolios">
+                  <div @click="cambiarColor3()">
+                    <p
+                      v-bind:style="{ color: colorFont }"
+                      v-bind:class="[{ neon: isActivePortafolios }]"
+                      class="neonRojo"
+                    >
+                      {{ $t("menuProyectos") }}
+                    </p>
+                  </div>
+                </router-link>
+              </v-col>
 
-                <v-col cols="3" xs="3" class="menuItem">
-                  <router-link to="/contact">
-                    <div @click="cambiarColor5()">
-                      <p
-                        v-bind:style="{ color: colorFont }"
-                        v-bind:class="[{ neon: isActiveContact }]"
-                        class="neonRojo"
-                      >
-                        {{ $t("menuContacto") }}
-                      </p>
-                    </div>
-                  </router-link>
-                </v-col>
-              </v-row>
+              <v-col cols="3" xs="3" class="menuItem">
+                <router-link to="/contact">
+                  <div @click="cambiarColor5()">
+                    <p
+                      v-bind:style="{ color: colorFont }"
+                      v-bind:class="[{ neon: isActiveContact }]"
+                      class="neonRojo"
+                    >
+                      {{ $t("menuContacto") }}
+                    </p>
+                  </div>
+                </router-link>
+              </v-col>
             </v-row>
           </nav>
         </div>
@@ -162,7 +160,7 @@ export default {
 }
 .neonRojo:hover {
   color: #fff;
-  text-shadow: 0 0 5px rgba(25, 200, 0, 1), 0 0 10px rgba(25, 200, 0,1),
+  text-shadow: 0 0 5px rgba(25, 200, 0, 1), 0 0 10px rgba(25, 200, 0, 1),
     0 0 20px rgba(25, 200, 0, 1), 0 0 40px rgba(177, 0, 0, 1),
     0 0 80px rgba(177, 0, 0, 1), 0 0 90px rgba(177, 0, 0, 1),
     0 0 100px rgba(100, 0, 0, 1), 0 0 140px rgba(100, 0, 0, 1),
