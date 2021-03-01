@@ -12,7 +12,7 @@
     "core-js": "^3.6.4",
     "emailjs-com": "^2.4.1",
     "swiper": "^5.4.2",
-    "three": "^0.116.1",
+    "three": "^0.125.0",
     "vue": "^2.6.11",
     "vue-awesome-swiper": "^4.1.1",
     "vue-i18n": "^8.17.3",
