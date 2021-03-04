@@ -576,18 +576,15 @@
         </v-container>
       </div>
 
-      <v-card>
+      <v-container>
         <div id="flechaPlay1">
           <v-icon x-large color="#ffffff" class="neon">mdi-arrow-right</v-icon>
         </div>
-        <v-row justify="center">
-          <v-col cols="12" align="center">
-            <v-card-title id="botonPlay" @click="onClickInstructions()">{{
-              $t("playButton")
-            }}</v-card-title>
-          </v-col>
-        </v-row>
-      </v-card>
+
+        <div id="boton-play" @click="onClickInstructions()">{{
+          $t("playButton")
+        }}</div>
+      </v-container>
     </div>
 
     <v-img
@@ -728,7 +725,7 @@ import { PointerLockControls } from "three/examples/jsm/controls/PointerLockCont
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { Water } from "three/examples/jsm/objects/Water.js";
 import { Sky } from "three/examples/jsm/objects/Sky.js";
-import 'sweetalert2/dist/sweetalert2.min.css';
+import "sweetalert2/dist/sweetalert2.min.css";
 
 export default {
   data() {
@@ -784,7 +781,7 @@ export default {
     titleTemplate: "%s | Web Developer",
   },
   methods: {
-    init: function () {
+    init: function() {
       document.getElementById("presentacion").style.zIndex = "9";
       this.blocker = document.getElementById("blocker");
       const canvas = document.querySelector("#c");
@@ -1016,7 +1013,7 @@ export default {
         textureHeight: 512,
         waterNormals: new Three.TextureLoader().load(
           "/waternormals.jpg",
-          function (texture) {
+          function(texture) {
             texture.wrapS = texture.wrapT = Three.RepeatWrapping;
           }
         ),
@@ -1031,17 +1028,20 @@ export default {
       this.water.rotation.x = -Math.PI / 2;
       this.water.position.y = -12;
     },
-    animate: function () {
+    animate: function() {
       let time = performance.now();
       requestAnimationFrame(this.animate);
       if (this.water) {
         this.water.material.uniforms["time"].value += 1.0 / 60.0;
       }
       if (this.model2) {
-        this.model2.rotation.z += 0.00005;
+        this.model2.rotation.z += 0.00001;
+      }
+      if (this.model3) {
+        this.model3.rotation.z += 0.00001;
       }
       if (this.model4) {
-        this.model4.rotation.z += 0.0002;
+        this.model4.rotation.z += 0.001;
       }
       if (this.controls.isLocked === true) {
         this.raycaster.ray.origin.copy(this.controls.getObject().position);
@@ -1127,16 +1127,16 @@ export default {
 
       this.renderer.render(this.scene, this.camera);
     },
-    onWindowResize: function () {
+    onWindowResize: function() {
       this.camera.aspect = window.innerWidth / window.innerHeight;
       this.camera.updateProjectionMatrix();
       this.renderer.setSize(window.innerWidth, window.innerHeight);
     },
-    onClickInstructions: function () {
+    onClickInstructions: function() {
       this.controls.lock();
     },
     hablar() {
-      console.log('hablando');
+      console.log("hablando");
       this.$swal({
         title: this.$t("goku"),
         text: this.$t("goku2"),
@@ -1148,7 +1148,7 @@ export default {
       });
     },
     dejarDeHablar() {},
-    onLock: function () {
+    onLock: function() {
       if (!this.goku) {
         this.instructions.style.display = "block";
         setTimeout(() => {
@@ -1158,7 +1158,7 @@ export default {
         this.blocker.style.display = "";
         document.getElementById("presentacion").style.display = "block";
         document.getElementById("presentacion").style.opacity = "0";
-        document.getElementById("botonPlay").style.opacity = "0";
+        document.getElementById("boton-play").style.opacity = "0";
         document.getElementById("flechaPlay1").style.opacity = "0";
         document.getElementById("testimonios").style.display = "none";
         //document.getElementById("controlesMobile").style.opacity = "1";
@@ -1174,13 +1174,13 @@ export default {
         }, 7000);
       }
     },
-    onUnlock: function () {
+    onUnlock: function() {
       if (this.goku) {
         this.hablar();
       } else {
         this.blocker.style.display = "block";
         document.getElementById("presentacion").style.opacity = "1";
-        document.getElementById("botonPlay").style.opacity = "1";
+        document.getElementById("boton-play").style.opacity = "1";
         document.getElementById("flechaPlay1").style.opacity = "1";
         document.getElementById("testimonios").style.opacity = "1";
         //document.getElementById("controlesMobile").style.opacity = "0";
@@ -1208,7 +1208,7 @@ export default {
     mobileControlEsc() {
       this.onUnLock();
     },
-    onKeyDown: function (event) {
+    onKeyDown: function(event) {
       switch (event.keyCode) {
         case 38: // up
         case 87: // w
@@ -1265,7 +1265,7 @@ export default {
           break;
       }
     },
-    onKeyUp: function (event) {
+    onKeyUp: function(event) {
       switch (event.keyCode) {
         case 38: // up
         case 87: // w
@@ -1319,7 +1319,7 @@ export default {
     document.addEventListener("keyup", this.onKeyUp, false);
     this.controls.addEventListener("lock", this.onLock, false);
     this.controls.addEventListener("unlock", this.onUnlock, false);
-    document.getElementById("botonPlay").style.zIndex = "9999";
+    document.getElementById("boton-play").style.zIndex = "9999";
     if (window.innerWidth < 960) {
       console.log("phone");
       this.isMobile = true;
@@ -1338,7 +1338,6 @@ export default {
 </script>
 
 <style>
-
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;
@@ -1366,7 +1365,7 @@ export default {
   border-radius: 10px !important;
   width: 40vw !important;
   transition: all 725ms ease;
-  z-index:999;
+  z-index: 999;
   box-shadow: 2px 2px 100px rgba(199, 180, 11, 0.1);
 }
 @media (min-width: 960px) {
@@ -1379,8 +1378,7 @@ export default {
     width: 90vw !important;
   }
 }
-.swal2-container{
-
+.swal2-container {
 }
 .swal2-popup:hover {
   background-color: rgba(10, 10, 10, 1) !important;
@@ -1400,7 +1398,7 @@ export default {
   top: 1vh !important;
   margin-top: 0vh;
   padding-top: 0vh;
-  padding-left:2vw;
+  padding-left: 2vw;
   width: 100%;
   overflow: visible;
 }
@@ -1482,12 +1480,12 @@ export default {
     width: 100%;
     height: 100%;
   }
-  #botonPlay {
+  #boton-play {
     position: fixed;
     padding: 15px;
     padding-top: 3px;
     padding-bottom: 7px;
-    left: 50%;
+    left: 50vw;
     transform: translateX(-50%);
     bottom: 16vh;
     font-family: "quantum";
@@ -1496,13 +1494,14 @@ export default {
     letter-spacing: 1.2px;
     background-color: rgba(255, 255, 255, 1);
     cursor: pointer;
-    font-size: calc(16px + 0.5vw);
+    font-size: calc(16px + 0.6vw);
     z-index: 999;
-    transition: 925ms ease;
+    transition: 325ms ease;
+    opacity: 1;
   }
-  #botonPlay:hover {
+  #boton-play:hover {
     background-color: rgba(255, 255, 255, 0.9);
-    font-size: calc(14px + 0.5vw);
+    opacity: 0.5;
   }
   #flechaPlay1 {
     position: fixed;
@@ -1671,7 +1670,7 @@ export default {
   }
   .happyCustomers {
     font-size: calc(10px + 0.5vw);
-    padding-left:2vw;
+    padding-left: 2vw;
   }
   @media (min-height: 900px) {
     #presentacion {
@@ -1682,8 +1681,7 @@ export default {
     #flechaPlay1 {
       bottom: 21.5vh;
     }
-    #botonPlay {
-      font-size: 40px;
+    #boton-play {
       padding: 15px;
       padding-top: 10px;
       padding-bottom: 20px;
@@ -1765,13 +1763,11 @@ export default {
     width: 100%;
     height: 100%;
   }
-  #botonPlay {
+  #boton-play {
     display: none;
-    position: fixed;
     padding: 15px;
     padding-top: 5px;
     padding-bottom: 10px;
-    left: 38%;
     bottom: 8vh;
     font-family: "quantum";
     background-color: rgba(255, 255, 255, 1);
@@ -1779,13 +1775,6 @@ export default {
     font-size: 20px;
     z-index: 99;
     transition: 925ms ease;
-    animation: cycle 10s linear infinite;
-    animation-direction: alternate-reverse;
-  }
-  #botonPlay:hover {
-    background-color: rgba(255, 255, 255, 0.9);
-    font-size: 19px;
-    transform: translateY(7px);
   }
   #cruz {
     position: absolute;
